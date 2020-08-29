@@ -1,0 +1,145 @@
+[
+  {
+    "Name": "Entrenador Inicial",
+    "Deck": "INICIALES",
+    "Shot": 0,
+    "Tackle": 0,
+    "Pass": 0,
+    "Teamwork": 0,
+    "Cross": 0,
+    "ReRoll": "TRUE",
+    "FormationChg": "NULL"
+  },
+  {
+    "Name": "Belmonte",
+    "Deck": "MAZO1",
+    "Shot": 0,
+    "Tackle": 0,
+    "Pass": 0,
+    "Teamwork": 0,
+    "Cross": 1,
+    "ReRoll": "FALSE",
+    "FormationChg": "CENTRO_IZQUIERDA"
+  },
+  {
+    "Name": "Matasiete",
+    "Deck": "MAZO1",
+    "Shot": 0,
+    "Tackle": 0,
+    "Pass": 1,
+    "Teamwork": 0,
+    "Cross": 0,
+    "ReRoll": "FALSE",
+    "FormationChg": "LATERAL_IZQUIERDA"
+  },
+  {
+    "Name": "Picapicara",
+    "Deck": "MAZO1",
+    "Shot": 3,
+    "Tackle": 0,
+    "Pass": 0,
+    "Teamwork": 0,
+    "Cross": 0,
+    "ReRoll": "FALSE",
+    "FormationChg": "EXTREMO_DERECHA"
+  },
+  {
+    "Name": "Angel Martinez",
+    "Deck": "MAZO2",
+    "Shot": 0,
+    "Tackle": 2,
+    "Pass": 0,
+    "Teamwork": 0,
+    "Cross": 0,
+    "ReRoll": "FALSE",
+    "FormationChg": "LATERAL_DERECHO"
+  },
+  {
+    "Name": "Buhonero",
+    "Deck": "MAZO2",
+    "Shot": 0,
+    "Tackle": 0,
+    "Pass": 2,
+    "Teamwork": 1,
+    "Cross": 0,
+    "ReRoll": "FALSE",
+    "FormationChg": "EXTREMO_IZQUIERDA"
+  },
+  {
+    "Name": "Ethan",
+    "Deck": "MAZO2",
+    "Shot": 0,
+    "Tackle": 1,
+    "Pass": 0,
+    "Teamwork": 1,
+    "Cross": 0,
+    "ReRoll": "FALSE",
+    "FormationChg": "CENTRO_DERECHA"
+  },
+  {
+    "Name": "Meldrel",
+    "Deck": "MAZO2",
+    "Shot": 0,
+    "Tackle": 0,
+    "Pass": 0,
+    "Teamwork": 0,
+    "Cross": 2,
+    "ReRoll": "FALSE",
+    "FormationChg": "CENTRO_DERECHA"
+  },
+  {
+    "Name": "Eximeno",
+    "Deck": "MAZO3",
+    "Shot": 0,
+    "Tackle": 0,
+    "Pass": 0,
+    "Teamwork": 0,
+    "Cross": 3,
+    "ReRoll": "FALSE",
+    "FormationChg": "EXTREMO_DERECHA"
+  },
+  {
+    "Name": "Dulzinea",
+    "Deck": "MAZO3",
+    "Shot": 0,
+    "Tackle": 2,
+    "Pass": 1,
+    "Teamwork": 0,
+    "Cross": 0,
+    "ReRoll": "FALSE",
+    "FormationChg": "LATERAL_IZQUIERDA"
+  },
+  {
+    "Name": "Luistechno",
+    "Deck": "MAZO3",
+    "Shot": 0,
+    "Tackle": 0,
+    "Pass": 0,
+    "Teamwork": 2,
+    "Cross": 0,
+    "ReRoll": "FALSE",
+    "FormationChg": "CENTRO_IZQUIERDA"
+  },
+  {
+    "Name": "Becerra",
+    "Deck": "MAZO4",
+    "Shot": 0,
+    "Tackle": 2,
+    "Pass": 0,
+    "Teamwork": 0,
+    "Cross": 2,
+    "ReRoll": "FALSE",
+    "FormationChg": "CENTRO_DERECHA"
+  },
+  {
+    "Name": "Javidenuln",
+    "Deck": "MAZO4",
+    "Shot": 0,
+    "Tackle": 0,
+    "Pass": 0,
+    "Teamwork": 1,
+    "Cross": 0,
+    "ReRoll": "TRUE",
+    "FormationChg": "LATERAL_DERECHO"
+  }
+]

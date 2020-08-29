@@ -1,0 +1,145 @@
+<ion-content>
+  <div class="container" *ngIf="isData">
+    <div class="fila">
+      <div class="jugador"></div>
+      <div class="jugador">
+        <img
+          [src]="getImg('DELANTERO_IZQUIERDO')"
+          [routerLink]="['/jugadores','DELANTERO_IZQUIERDO']"
+        />
+      </div>
+
+      <div class="jugador">
+        <img
+          [src]="getImg('DELANTERO_DERECHO')"
+          [routerLink]="['/jugadores','DELANTERO_DERECHO']"
+        />
+        {{ alineacion['DELANTERO_DERECHO'].nombre }}
+      </div>
+      <div class="jugador"></div>
+    </div>
+
+    <div class="fila">
+      <div class="jugador">
+        <img
+          [src]="getImg('EXTREMO_IZQUIERDA')"
+          [routerLink]="['/jugadores','EXTREMO_IZQUIERDA']"
+        />
+        {{ alineacion['EXTREMO_IZQUIERDA'].nombre }}
+      </div>
+
+      <div class="jugador">
+        <img
+          [src]="getImg('CENTRO_IZQUIERDA')"
+          [routerLink]="['/jugadores','CENTRO_IZQUIERDA']"
+        />
+        {{ alineacion['CENTRO_IZQUIERDA'].nombre }}
+      </div>
+
+      <div class="jugador">
+        <img
+          [src]="getImg('CENTRO_DERECHA')"
+          [routerLink]="['/jugadores','CENTRO_DERECHA']"
+        />
+      </div>
+
+      <div class="jugador">
+        <img
+          [src]="getImg('EXTREMO_DERECHA')"
+          [routerLink]="['/jugadores','EXTREMO_DERECHA']"
+        />
+      </div>
+    </div>
+    <div class="fila">
+      <div class="jugador">
+        <img
+          [src]="getImg('LATERAL_IZQUIERDA')"
+          [routerLink]="['/jugadores','LATERAL_IZQUIERDA']"
+        />
+      </div>
+      <div class="jugador">
+        <img
+          [src]="getImg('CENTRO_IZQUIERDA')"
+          [routerLink]="['/jugadores','CENTRO_IZQUIERDA']"
+        />
+      </div>
+
+      <div class="jugador">
+        <img
+          [src]="getImg('CENTRO_DERECHA')"
+          [routerLink]="['/jugadores','CENTRO_DERECHA']"
+        />
+      </div>
+
+      <div class="jugador">
+        <img
+          [src]="getImg('LATERAL_DERECHO')"
+          [routerLink]="['/jugadores','LATERAL_DERECHO']"
+        />
+      </div>
+    </div>
+    <div class="fila">
+      <div class="jugador"></div>
+      <div class="jugador">
+        <img
+          [src]="getImg('PORTERO')"
+          [routerLink]="['/jugadores','PORTERO']"
+        />
+        {{alineacion['PORTERO'].id}}
+      </div>
+      <div class="jugador"></div>
+    </div>
+
+    <div class="fila">
+      <div class="jugador">
+        <img
+          src="assets/images/jugador_vacio.jpg"
+          [routerLink]="['/jugadores','COACH']"
+        />
+      </div>
+
+      <div class="jugador">
+        <img
+          src="assets/images/jugador_vacio.jpg"
+          [routerLink]="['/jugadores','COACH']"
+        />
+      </div>
+
+      <div class="jugador">
+        <img
+          src="assets/images/jugador_vacio.jpg"
+          [routerLink]="['/jugadores','COACH']"
+        />
+      </div>
+    </div>
+
+    <div class="fila">
+      <div class="marcador">
+        <b
+          ><ion-icon
+            name="football"
+            style="zoom:3.0;"
+            color="warning"
+          ></ion-icon
+        ></b>
+        {{alineacion.ATAQUE}}
+      </div>
+      <div class="marcador">
+        <b
+          ><ion-icon name="shield" style="zoom:3.0;" color="primary"></ion-icon
+        ></b>
+        {{alineacion.DEFENSA}}
+      </div>
+      <div class="marcador">
+        <b>
+          <ion-icon
+            name="cash-outline"
+            style="zoom:3.0;"
+            color="success"
+          ></ion-icon
+        ></b>
+        {{alineacion.GANANCIAS}}
+      </div>
+    </div>
+  </div>
+</ion-content>
