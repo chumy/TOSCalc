@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Jugador } from "../models/jugador";
 import { Alineacion } from "../models/alineacion";
-import { analyzeAndValidateNgModules } from "@angular/compiler";
+import { Entrenador } from "../models/entrenador";
 
 @Injectable({
   providedIn: "root"
@@ -43,6 +43,14 @@ export class AlineacionService {
     this.eliminarJugador(jugador);
 
     this.alineacion[posicion] = jugador;
+    this.guardarAlineacion();
+  }
+
+  guardarEntrenadorPosicion(entrenador: Entrenador, posicion: string) {
+    //Chequear que no exista previamente
+    //this.eliminarJugador(entrenador);
+
+    this.alineacion[posicion] = entrenador;
     this.guardarAlineacion();
   }
 

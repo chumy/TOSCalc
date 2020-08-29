@@ -35,5 +35,8 @@ export class Alineacion {
     this.GANANCIAS = 0;
     this.DEFENSA = 0;
     this.ATAQUE = 0;
+    this.COACH1 = new Entrenador();
+    this.COACH2 = new Entrenador();
+    this.COACH3 = new Entrenador();
   }
 }

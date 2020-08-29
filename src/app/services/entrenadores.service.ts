@@ -13,6 +13,7 @@ export class EntrenadoresService {
   constructor(private http: HttpClient) {
     this.getEntrenadores().subscribe(data => {
       this.entrenadores = data;
+      console.log(this.entrenadores);
     });
   }
 

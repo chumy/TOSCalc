@@ -37,10 +37,20 @@ const routes: Routes = [
   },
   {
     path: "entrenadores",
-    loadChildren: () =>
-      import("./pages/entrenadores/entrenadores.module").then(
-        m => m.EntrenadoresPageModule
-      )
+    children: [
+      {
+        path: "",
+        redirectTo: "home",
+        pathMatch: "full"
+      },
+      {
+        path: ":posicion",
+        loadChildren: () =>
+          import("./pages/entrenadores/entrenadores.module").then(
+            m => m.EntrenadoresPageModule
+          )
+      }
+    ]
   },
   {
     path: "patrocinadores",

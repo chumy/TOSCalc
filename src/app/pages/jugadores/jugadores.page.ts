@@ -39,7 +39,7 @@ export class JugadoresPage implements OnInit {
       this.jugadores = this._jugadoresService.jugadores.filter(data => {
         return data[this.posicion] == 1;
       });
-      console.log(this.jugadores);
+      //console.log(this.jugadores);
     });
     //console.log("recibida posicion ", this.posicion);
   }

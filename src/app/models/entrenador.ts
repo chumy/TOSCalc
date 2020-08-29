@@ -13,7 +13,7 @@ export class Entrenador {
   posDefensa: string;
 
   constructor() {
-    this.nombre = null;
+    this.nombre = "";
     this.id = null;
     this.mazo = "";
     this.sueldo = 0;

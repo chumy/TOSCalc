@@ -94,22 +94,25 @@
       <div class="jugador">
         <img
           src="assets/images/jugador_vacio.jpg"
-          [routerLink]="['/jugadores','COACH']"
+          [routerLink]="['/entrenadores', 'COACH1']"
         />
+        {{alineacion['COACH1'].nombre}}
       </div>
 
       <div class="jugador">
         <img
           src="assets/images/jugador_vacio.jpg"
-          [routerLink]="['/jugadores','COACH']"
+          [routerLink]="['/entrenadores','COACH2']"
         />
+        {{alineacion['COACH2'].nombre}}
       </div>
 
       <div class="jugador">
         <img
           src="assets/images/jugador_vacio.jpg"
-          [routerLink]="['/jugadores','COACH']"
+          [routerLink]="['/entrenadores','COACH3']"
         />
+        {{alineacion['COACH3'].nombre}}
       </div>
     </div>
 
