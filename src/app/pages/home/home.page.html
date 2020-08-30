@@ -4,14 +4,15 @@
       <div class="jugador"></div>
       <div class="jugador">
         <img
-          [src]="getImg('DELANTERO_IZQUIERDO')"
+          [src]="getImgJugador('DELANTERO_IZQUIERDO')"
           [routerLink]="['/jugadores','DELANTERO_IZQUIERDO']"
         />
+        {{ alineacion['DELANTERO_IZQUIERDO'].nombre }}
       </div>
 
       <div class="jugador">
         <img
-          [src]="getImg('DELANTERO_DERECHO')"
+          [src]="getImgJugador('DELANTERO_DERECHO')"
           [routerLink]="['/jugadores','DELANTERO_DERECHO']"
         />
         {{ alineacion['DELANTERO_DERECHO'].nombre }}
@@ -22,70 +23,76 @@
     <div class="fila">
       <div class="jugador">
         <img
-          [src]="getImg('EXTREMO_IZQUIERDA')"
-          [routerLink]="['/jugadores','EXTREMO_IZQUIERDA']"
+          [src]="getImgJugador('EXTREMO_IZQUIERDO')"
+          [routerLink]="['/jugadores','EXTREMO_IZQUIERDO']"
         />
-        {{ alineacion['EXTREMO_IZQUIERDA'].nombre }}
+        {{ alineacion['EXTREMO_IZQUIERDO'].nombre }}
       </div>
 
       <div class="jugador">
         <img
-          [src]="getImg('CENTRO_IZQUIERDA')"
-          [routerLink]="['/jugadores','CENTRO_IZQUIERDA']"
+          [src]="getImgJugador('CENTRO_IZQUIERDO')"
+          [routerLink]="['/jugadores','CENTRO_IZQUIERDO']"
         />
-        {{ alineacion['CENTRO_IZQUIERDA'].nombre }}
+        {{ alineacion['CENTRO_IZQUIERDO'].nombre }}
       </div>
 
       <div class="jugador">
         <img
-          [src]="getImg('CENTRO_DERECHA')"
-          [routerLink]="['/jugadores','CENTRO_DERECHA']"
+          [src]="getImgJugador('CENTRO_DERECHO')"
+          [routerLink]="['/jugadores','CENTRO_DERECHO']"
         />
+        {{ alineacion['CENTRO_DERECHO'].nombre }}
       </div>
 
       <div class="jugador">
         <img
-          [src]="getImg('EXTREMO_DERECHA')"
-          [routerLink]="['/jugadores','EXTREMO_DERECHA']"
+          [src]="getImgJugador('EXTREMO_DERECHO')"
+          [routerLink]="['/jugadores','EXTREMO_DERECHO']"
         />
+        {{ alineacion['EXTREMO_DERECHO'].nombre }}
       </div>
     </div>
     <div class="fila">
       <div class="jugador">
         <img
-          [src]="getImg('LATERAL_IZQUIERDA')"
-          [routerLink]="['/jugadores','LATERAL_IZQUIERDA']"
+          [src]="getImgJugador('LATERAL_IZQUIERDO')"
+          [routerLink]="['/jugadores','LATERAL_IZQUIERDO']"
         />
+        {{ alineacion['LATERAL_IZQUIERDO'].nombre }}
       </div>
       <div class="jugador">
         <img
-          [src]="getImg('CENTRO_IZQUIERDA')"
-          [routerLink]="['/jugadores','CENTRO_IZQUIERDA']"
+          [src]="getImgJugador('DEFENSA_IZQUIERDO')"
+          [routerLink]="['/jugadores','DEFENSA_IZQUIERDO']"
         />
-      </div>
-
-      <div class="jugador">
-        <img
-          [src]="getImg('CENTRO_DERECHA')"
-          [routerLink]="['/jugadores','CENTRO_DERECHA']"
-        />
+        {{ alineacion['DEFENSA_IZQUIERDO'].nombre }}
       </div>
 
       <div class="jugador">
         <img
-          [src]="getImg('LATERAL_DERECHO')"
+          [src]="getImgJugador('DEFENSA_DERECHO')"
+          [routerLink]="['/jugadores','DEFENSA_DERECHO']"
+        />
+        {{ alineacion['DEFENSA_DERECHO'].nombre }}
+      </div>
+
+      <div class="jugador">
+        <img
+          [src]="getImgJugador('LATERAL_DERECHO')"
           [routerLink]="['/jugadores','LATERAL_DERECHO']"
         />
+        {{ alineacion['LATERAL_DERECHO'].nombre }}
       </div>
     </div>
     <div class="fila">
       <div class="jugador"></div>
       <div class="jugador">
         <img
-          [src]="getImg('PORTERO')"
+          [src]="getImgJugador('PORTERO')"
           [routerLink]="['/jugadores','PORTERO']"
         />
-        {{alineacion['PORTERO'].id}}
+        {{alineacion['PORTERO'].nombre}}
       </div>
       <div class="jugador"></div>
     </div>
@@ -93,7 +100,7 @@
     <div class="fila">
       <div class="jugador">
         <img
-          src="assets/images/jugador_vacio.jpg"
+          [src]="getImgEntrenador('COACH1')"
           [routerLink]="['/entrenadores', 'COACH1']"
         />
         {{alineacion['COACH1'].nombre}}
@@ -101,7 +108,7 @@
 
       <div class="jugador">
         <img
-          src="assets/images/jugador_vacio.jpg"
+          [src]="getImgEntrenador('COACH2')"
           [routerLink]="['/entrenadores','COACH2']"
         />
         {{alineacion['COACH2'].nombre}}
@@ -109,7 +116,7 @@
 
       <div class="jugador">
         <img
-          src="assets/images/jugador_vacio.jpg"
+          [src]="getImgEntrenador('COACH3')"
           [routerLink]="['/entrenadores','COACH3']"
         />
         {{alineacion['COACH3'].nombre}}

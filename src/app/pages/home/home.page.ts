@@ -53,11 +53,20 @@ export class HomePage implements OnInit {
     });*/
   }
 
-  public getImg(posicion: string): string {
+  public getImgJugador(posicion: string): string {
     // return "assets/images/jugador_vacio.jpg";
-
+    //console.log(posicion);
+    //return !(typeof this.alineacion[posicion].id === "undefined")
     return this.alineacion[posicion].id
       ? "assets/images/jugadores/" + this.alineacion[posicion].id + ".jpg"
       : "assets/images/jugador_vacio.jpg";
+  }
+
+  public getImgEntrenador(posicion: string): string {
+    // return "assets/images/jugador_vacio.jpg";
+
+    return this.alineacion[posicion].id
+      ? "assets/images/entrenadores/" + this.alineacion[posicion].id + ".jpg"
+      : "assets/images/entrenadores/entrenador_vacio.jpg";
   }
 }

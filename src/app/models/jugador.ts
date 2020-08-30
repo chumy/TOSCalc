@@ -16,14 +16,14 @@ export class Jugador {
   habIzquierda: string;
   habAbajo: string;
   PORTERO: number;
-  LATERAL_IZQUIERDA: number;
+  LATERAL_IZQUIERDO: number;
   DEFENSA_IZQUIERDO: number;
   DEFENSA_DERECHO: number;
   LATERAL_DERECHO: number;
-  EXTREMO_IZQUIERDA: number;
-  CENTRO_IZQUIERDA: number;
-  CENTRO_DERECHA: number;
-  EXTREMO_DERECHA: number;
+  EXTREMO_IZQUIERDO: number;
+  CENTRO_IZQUIERDO: number;
+  CENTRO_DERECHO: number;
+  EXTREMO_DERECHO: number;
   DELANTERO_IZQUIERDO: number;
   DELANTERO_DERECHO: number;
 
@@ -45,14 +45,14 @@ export class Jugador {
     this.habIzquierda = "";
     this.habAbajo = "";
     this.PORTERO = 0;
-    this.LATERAL_IZQUIERDA = 0;
+    this.LATERAL_IZQUIERDO = 0;
     this.DEFENSA_IZQUIERDO = 0;
     this.DEFENSA_DERECHO = 0;
     this.LATERAL_DERECHO = 0;
-    this.EXTREMO_IZQUIERDA = 0;
-    this.CENTRO_IZQUIERDA = 0;
-    this.CENTRO_DERECHA = 0;
-    this.EXTREMO_DERECHA = 0;
+    this.EXTREMO_IZQUIERDO = 0;
+    this.CENTRO_IZQUIERDO = 0;
+    this.CENTRO_DERECHO = 0;
+    this.EXTREMO_DERECHO = 0;
     this.DELANTERO_IZQUIERDO = 0;
     this.DELANTERO_DERECHO = 0;
   }

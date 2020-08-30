@@ -4,6 +4,7 @@ import { JugadoresService } from "../../services/jugadores.service";
 
 import { AlineacionService } from "src/app/services/alineacion.service";
 import { Jugador } from "src/app/models/jugador";
+import { Alineacion } from "src/app/models/alineacion";
 
 @Component({
   selector: "app-jugadores",
@@ -13,6 +14,7 @@ import { Jugador } from "src/app/models/jugador";
 export class JugadoresPage implements OnInit {
   jugadores: Jugador[];
   posicion: string;
+  alineacion: Alineacion;
 
   constructor(
     private _jugadoresService: JugadoresService,
@@ -35,7 +37,7 @@ export class JugadoresPage implements OnInit {
         console.log(this.jugadores);
       });
       */
-
+      this.alineacion = this._alineacionService.alineacion;
       this.jugadores = this._jugadoresService.jugadores.filter(data => {
         return data[this.posicion] == 1;
       });
@@ -50,6 +52,16 @@ export class JugadoresPage implements OnInit {
       return data["id"] == parseInt(id);
     });
     this._alineacionService.guardarJugadorPosicion(jugador[0], this.posicion);
+    //console.log("seleccionado ", jugador);
+    //this._alineacionService.actualizarValores();
+    this.router.navigateByUrl("/home");
+  }
+
+  removeJugador(id: string) {
+    let jugador = this.jugadores.filter(data => {
+      return data["id"] == parseInt(id);
+    });
+    this._alineacionService.eliminarJugador(jugador[0]);
     //console.log("seleccionado ", jugador);
     //this._alineacionService.actualizarValores();
     this.router.navigateByUrl("/home");

@@ -3,6 +3,7 @@ import { Entrenador } from "src/app/models/entrenador";
 import { EntrenadoresService } from "src/app/services/entrenadores.service";
 import { AlineacionService } from "src/app/services/alineacion.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Alineacion } from "src/app/models/alineacion";
 
 @Component({
   selector: "app-entrenadores",
@@ -12,6 +13,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class EntrenadoresPage implements OnInit {
   entrenadores: Entrenador[];
   posicion: string;
+  alineacion: Alineacion;
 
   constructor(
     private _entrenadoresService: EntrenadoresService,
@@ -25,9 +27,10 @@ export class EntrenadoresPage implements OnInit {
       const newLocal = "posicion";
       this.posicion = paramMap.get(newLocal);
 
-      console.log("recibida posicion ", this.posicion);
+      //console.log("recibida posicion ", this.posicion);
       this.entrenadores = this._entrenadoresService.entrenadores;
-      console.log(this.entrenadores);
+      this.alineacion = this._alineacionService.alineacion;
+      // console.log(this.entrenadores);
     });
   }
 
@@ -40,6 +43,16 @@ export class EntrenadoresPage implements OnInit {
       entrenador[0],
       this.posicion
     );
+    //console.log("seleccionado ", jugador);
+    //this._alineacionService.actualizarValores();
+    this.router.navigateByUrl("/home");
+  }
+
+  removeJugador(id: string) {
+    let entrenador = this.entrenadores.filter(data => {
+      return data["id"] == parseInt(id);
+    });
+    this._alineacionService.eliminarEntrenador(entrenador[0]);
     //console.log("seleccionado ", jugador);
     //this._alineacionService.actualizarValores();
     this.router.navigateByUrl("/home");

@@ -29,7 +29,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["LATERAL_IZQUIERDA", "LATERAL_DERECHO"]
+    "PlayAblePositions": ["LATERAL_IZQUIERDO", "LATERAL_DERECHO"]
   },
   {
     "Name": "93",
@@ -45,7 +45,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "94",
@@ -61,7 +61,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["EXTREMO_IZQUIERDA", "EXTREMO_DERECHA"]
+    "PlayAblePositions": ["EXTREMO_IZQUIERDO", "EXTREMO_DERECHO"]
   },
   {
     "Name": "95",
@@ -77,7 +77,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "96",
@@ -110,10 +110,10 @@
     "R Ability": "NONE",
     "Btm Ab": "TEAMWORK",
     "PlayAblePositions": [
-      "EXTREMO_IZQUIERDA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
-      "EXTREMO_DERECHA"
+      "EXTREMO_IZQUIERDO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
+      "EXTREMO_DERECHO"
     ]
   },
   {
@@ -133,8 +133,8 @@
     "PlayAblePositions": [
       "DELANTERO_IZQUIERDO",
       "DELANTERO_DERECHO",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -152,9 +152,9 @@
     "R Ability": "NONE",
     "Btm Ab": "NONE",
     "PlayAblePositions": [
-      "EXTREMO_IZQUIERDA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "EXTREMO_IZQUIERDO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -204,9 +204,9 @@
     "R Ability": "CROSS",
     "Btm Ab": "NONE",
     "PlayAblePositions": [
-      "EXTREMO_IZQUIERDA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "EXTREMO_IZQUIERDO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -224,9 +224,9 @@
     "R Ability": "NONE",
     "Btm Ab": "TACKLE",
     "PlayAblePositions": [
-      "LATERAL_IZQUIERDA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
+      "LATERAL_IZQUIERDO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
       "LATERAL_DERECHO"
     ]
   },
@@ -244,7 +244,7 @@
     "L Ability": "NONE",
     "R Ability": "TEAMWORK",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Donkijote",
@@ -293,10 +293,10 @@
     "R Ability": "NONE",
     "Btm Ab": "TACKLE",
     "PlayAblePositions": [
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -329,7 +329,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["EXTREMO_DERECHA", "LATERAL_DERECHO"]
+    "PlayAblePositions": ["EXTREMO_DERECHO", "LATERAL_DERECHO"]
   },
   {
     "Name": "Javier Lozano",
@@ -345,7 +345,7 @@
     "L Ability": "TEAMWORK",
     "R Ability": "NONE",
     "Btm Ab": "TEAMWORK",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Fuch",
@@ -361,7 +361,7 @@
     "L Ability": "TACKLE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["LATERAL_IZQUIERDA", "LATERAL_DERECHO"]
+    "PlayAblePositions": ["LATERAL_IZQUIERDO", "LATERAL_DERECHO"]
   },
   {
     "Name": "Sancho",
@@ -378,8 +378,8 @@
     "R Ability": "TACKLE",
     "Btm Ab": "TACKLE",
     "PlayAblePositions": [
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
       "LATERAL_DERECHO"
     ]
   },
@@ -397,7 +397,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "TEAMWORK",
-    "PlayAblePositions": ["EXTREMO_DERECHA"]
+    "PlayAblePositions": ["EXTREMO_DERECHO"]
   },
   {
     "Name": "Zeefres",
@@ -413,7 +413,7 @@
     "L Ability": "CROSS",
     "R Ability": "NONE",
     "Btm Ab": "TEAMWORK",
-    "PlayAblePositions": ["EXTREMO_DERECHA"]
+    "PlayAblePositions": ["EXTREMO_DERECHO"]
   },
   {
     "Name": "Eric Draven",
@@ -432,7 +432,7 @@
     "PlayAblePositions": [
       "DELANTERO_IZQUIERDO",
       "DELANTERO_DERECHO",
-      "EXTREMO_DERECHA"
+      "EXTREMO_DERECHO"
     ]
   },
   {
@@ -452,10 +452,10 @@
     "PlayAblePositions": [
       "DELANTERO_IZQUIERDO",
       "DELANTERO_DERECHO",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -472,7 +472,7 @@
     "L Ability": "TEAMWORK",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Julio Alberto",
@@ -488,7 +488,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "PASS",
-    "PlayAblePositions": ["EXTREMO_IZQUIERDA", "LATERAL_IZQUIERDA"]
+    "PlayAblePositions": ["EXTREMO_IZQUIERDO", "LATERAL_IZQUIERDO"]
   },
   {
     "Name": "C. Benmac",
@@ -505,9 +505,9 @@
     "R Ability": "TEAMWORK",
     "Btm Ab": "NONE",
     "PlayAblePositions": [
-      "LATERAL_IZQUIERDA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
+      "LATERAL_IZQUIERDO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
       "LATERAL_DERECHO"
     ]
   },
@@ -557,7 +557,7 @@
     "L Ability": "TEAMWORK",
     "R Ability": "NONE",
     "Btm Ab": "PASS",
-    "PlayAblePositions": ["EXTREMO_DERECHA", "LATERAL_DERECHO"]
+    "PlayAblePositions": ["EXTREMO_DERECHO", "LATERAL_DERECHO"]
   },
   {
     "Name": "Akumo",
@@ -573,7 +573,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Rocinante",
@@ -589,7 +589,7 @@
     "L Ability": "TEAMWORK",
     "R Ability": "TEAMWORK",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Bucci",
@@ -621,7 +621,7 @@
     "L Ability": "NONE",
     "R Ability": "TEAMWORK",
     "Btm Ab": "PASS",
-    "PlayAblePositions": ["EXTREMO_IZQUIERDA"]
+    "PlayAblePositions": ["EXTREMO_IZQUIERDO"]
   },
   {
     "Name": "Aristark",
@@ -637,7 +637,7 @@
     "L Ability": "NONE",
     "R Ability": "TEAMWORK",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Cevasco",
@@ -669,7 +669,7 @@
     "L Ability": "TACKLE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["LATERAL_IZQUIERDA"]
+    "PlayAblePositions": ["LATERAL_IZQUIERDO"]
   },
   {
     "Name": "Fran Moli",
@@ -688,8 +688,8 @@
     "PlayAblePositions": [
       "DELANTERO_IZQUIERDO",
       "DELANTERO_DERECHO",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -707,9 +707,9 @@
     "R Ability": "NONE",
     "Btm Ab": "PASS",
     "PlayAblePositions": [
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
-      "EXTREMO_DERECHA"
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
+      "EXTREMO_DERECHO"
     ]
   },
   {
@@ -726,7 +726,7 @@
     "L Ability": "NONE",
     "R Ability": "CROSS",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["EXTREMO_IZQUIERDA", "EXTREMO_DERECHA"]
+    "PlayAblePositions": ["EXTREMO_IZQUIERDO", "EXTREMO_DERECHO"]
   },
   {
     "Name": "Ksuco",
@@ -742,7 +742,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Alfalsecas",
@@ -775,9 +775,9 @@
     "R Ability": "NONE",
     "Btm Ab": "TACKLE",
     "PlayAblePositions": [
-      "LATERAL_IZQUIERDA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "LATERAL_IZQUIERDO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -813,7 +813,7 @@
     "PlayAblePositions": [
       "DELANTERO_IZQUIERDO",
       "DELANTERO_DERECHO",
-      "EXTREMO_IZQUIERDA"
+      "EXTREMO_IZQUIERDO"
     ]
   },
   {
@@ -846,7 +846,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "TACKLE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Wilson Smith",
@@ -863,10 +863,10 @@
     "R Ability": "TEAMWORK",
     "Btm Ab": "TEAMWORK",
     "PlayAblePositions": [
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -886,7 +886,7 @@
     "PlayAblePositions": [
       "DELANTERO_IZQUIERDO",
       "DELANTERO_DERECHO",
-      "EXTREMO_DERECHA"
+      "EXTREMO_DERECHO"
     ]
   },
   {
@@ -903,7 +903,7 @@
     "L Ability": "CROSS",
     "R Ability": "NONE",
     "Btm Ab": "PASS",
-    "PlayAblePositions": ["EXTREMO_DERECHA"]
+    "PlayAblePositions": ["EXTREMO_DERECHO"]
   },
   {
     "Name": "Alpino",
@@ -922,8 +922,8 @@
     "PlayAblePositions": [
       "DELANTERO_IZQUIERDO",
       "DELANTERO_DERECHO",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -940,7 +940,7 @@
     "L Ability": "NONE",
     "R Ability": "TEAMWORK",
     "Btm Ab": "TACKLE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Artacho",
@@ -989,10 +989,10 @@
     "R Ability": "CROSS",
     "Btm Ab": "TEAMWORK",
     "PlayAblePositions": [
-      "EXTREMO_IZQUIERDA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
-      "EXTREMO_DERECHA"
+      "EXTREMO_IZQUIERDO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
+      "EXTREMO_DERECHO"
     ]
   },
   {
@@ -1010,11 +1010,11 @@
     "R Ability": "TEAMWORK",
     "Btm Ab": "TACKLE",
     "PlayAblePositions": [
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA",
-      "LATERAL_IZQUIERDA",
-      "CENTRO_IZQUIERDA",
-      "CENTRO_DERECHA"
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO",
+      "LATERAL_IZQUIERDO",
+      "CENTRO_IZQUIERDO",
+      "CENTRO_DERECHO"
     ]
   },
   {
@@ -1047,7 +1047,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Bendoya",
@@ -1063,7 +1063,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Raik",
@@ -1079,7 +1079,7 @@
     "L Ability": "NONE",
     "R Ability": "CROSS",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["EXTREMO_IZQUIERDA", "EXTREMO_DERECHA"]
+    "PlayAblePositions": ["EXTREMO_IZQUIERDO", "EXTREMO_DERECHO"]
   },
   {
     "Name": "Gato",
@@ -1095,7 +1095,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["LATERAL_IZQUIERDA", "LATERAL_DERECHO"]
+    "PlayAblePositions": ["LATERAL_IZQUIERDO", "LATERAL_DERECHO"]
   },
   {
     "Name": "Tone",
@@ -1127,7 +1127,7 @@
     "L Ability": "TEAMWORK",
     "R Ability": "TEAMWORK",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Salas",
@@ -1143,7 +1143,7 @@
     "L Ability": "TEAMWORK",
     "R Ability": "TEAMWORK",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Ushikai",
@@ -1159,7 +1159,7 @@
     "L Ability": "TEAMWORK",
     "R Ability": "TEAMWORK",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Pedrotronic",
@@ -1191,7 +1191,7 @@
     "L Ability": "NONE",
     "R Ability": "CROSS",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["EXTREMO_IZQUIERDA", "EXTREMO_DERECHA"]
+    "PlayAblePositions": ["EXTREMO_IZQUIERDO", "EXTREMO_DERECHO"]
   },
   {
     "Name": "Davidic",
@@ -1207,7 +1207,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "PASS",
-    "PlayAblePositions": ["EXTREMO_IZQUIERDA", "EXTREMO_DERECHA"]
+    "PlayAblePositions": ["EXTREMO_IZQUIERDO", "EXTREMO_DERECHO"]
   },
   {
     "Name": "Shintahid",
@@ -1223,7 +1223,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["CENTRO_IZQUIERDA", "CENTRO_DERECHA"]
+    "PlayAblePositions": ["CENTRO_IZQUIERDO", "CENTRO_DERECHO"]
   },
   {
     "Name": "Kalarien",
@@ -1239,7 +1239,7 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["LATERAL_IZQUIERDA", "LATERAL_DERECHO"]
+    "PlayAblePositions": ["LATERAL_IZQUIERDO", "LATERAL_DERECHO"]
   },
   {
     "Name": "Francis",
@@ -1255,6 +1255,6 @@
     "L Ability": "NONE",
     "R Ability": "NONE",
     "Btm Ab": "NONE",
-    "PlayAblePositions": ["LATERAL_IZQUIERDA", "LATERAL_DERECHO"]
+    "PlayAblePositions": ["LATERAL_IZQUIERDO", "LATERAL_DERECHO"]
   }
 ]

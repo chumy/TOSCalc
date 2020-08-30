@@ -19,7 +19,7 @@
     "Teamwork": 0,
     "Cross": 1,
     "ReRoll": "FALSE",
-    "FormationChg": "CENTRO_IZQUIERDA"
+    "FormationChg": "CENTRO_IZQUIERDO"
   },
   {
     "Name": "Matasiete",
@@ -30,7 +30,7 @@
     "Teamwork": 0,
     "Cross": 0,
     "ReRoll": "FALSE",
-    "FormationChg": "LATERAL_IZQUIERDA"
+    "FormationChg": "LATERAL_IZQUIERDO"
   },
   {
     "Name": "Picapicara",
@@ -41,7 +41,7 @@
     "Teamwork": 0,
     "Cross": 0,
     "ReRoll": "FALSE",
-    "FormationChg": "EXTREMO_DERECHA"
+    "FormationChg": "EXTREMO_DERECHO"
   },
   {
     "Name": "Angel Martinez",
@@ -63,7 +63,7 @@
     "Teamwork": 1,
     "Cross": 0,
     "ReRoll": "FALSE",
-    "FormationChg": "EXTREMO_IZQUIERDA"
+    "FormationChg": "EXTREMO_IZQUIERDO"
   },
   {
     "Name": "Ethan",
@@ -74,7 +74,7 @@
     "Teamwork": 1,
     "Cross": 0,
     "ReRoll": "FALSE",
-    "FormationChg": "CENTRO_DERECHA"
+    "FormationChg": "CENTRO_DERECHO"
   },
   {
     "Name": "Meldrel",
@@ -85,7 +85,7 @@
     "Teamwork": 0,
     "Cross": 2,
     "ReRoll": "FALSE",
-    "FormationChg": "CENTRO_DERECHA"
+    "FormationChg": "CENTRO_DERECHO"
   },
   {
     "Name": "Eximeno",
@@ -96,7 +96,7 @@
     "Teamwork": 0,
     "Cross": 3,
     "ReRoll": "FALSE",
-    "FormationChg": "EXTREMO_DERECHA"
+    "FormationChg": "EXTREMO_DERECHO"
   },
   {
     "Name": "Dulzinea",
@@ -107,7 +107,7 @@
     "Teamwork": 0,
     "Cross": 0,
     "ReRoll": "FALSE",
-    "FormationChg": "LATERAL_IZQUIERDA"
+    "FormationChg": "LATERAL_IZQUIERDO"
   },
   {
     "Name": "Luistechno",
@@ -118,7 +118,7 @@
     "Teamwork": 2,
     "Cross": 0,
     "ReRoll": "FALSE",
-    "FormationChg": "CENTRO_IZQUIERDA"
+    "FormationChg": "CENTRO_IZQUIERDO"
   },
   {
     "Name": "Becerra",
@@ -129,7 +129,7 @@
     "Teamwork": 0,
     "Cross": 2,
     "ReRoll": "FALSE",
-    "FormationChg": "CENTRO_DERECHA"
+    "FormationChg": "CENTRO_DERECHO"
   },
   {
     "Name": "Javidenuln",

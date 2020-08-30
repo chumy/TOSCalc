@@ -9,21 +9,22 @@
 
 <ion-content>
   <ion-list>
-    <ion-item
-      *ngFor="let jugador of jugadores"
-      (click)="jugadorSeleccionado(jugador.id)"
-    >
-      <ion-avatar slot="start">
-        <img src="assets/images/jugador_vacio.jpg" />
+    <ion-item *ngFor="let jugador of jugadores">
+      <ion-avatar slot="start" (click)="jugadorSeleccionado(jugador.id)">
+        <img src="assets/images/jugadores/{{jugador.id}}.jpg" />
       </ion-avatar>
 
-      <ion-label>
+      <ion-label (click)="jugadorSeleccionado(jugador.id)">
         <h2>{{jugador.nombre}}</h2>
         <p>{{jugador.id}}</p>
       </ion-label>
-      <ion-icon slot="end" name="videocam"></ion-icon>
-
-      <ion-icon slot="end" name="tv"></ion-icon>
+      <ion-icon
+        *ngIf="alineacion[posicion].id === jugador.id"
+        slot="end"
+        name="close-circle"
+        style="color:red"
+        (click)="removeJugador(jugador.id)"
+      ></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>
