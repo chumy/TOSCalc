@@ -32,39 +32,18 @@ export class HomePage implements OnInit {
   }
 
   async ngOnInit() {
-    /*this._jugadoresService.getJugadores().subscribe(valor => {
-      this.jugadores = valor;
-      console.log(this.jugadores);
-    });*/
-    //this.jugadores = this._jugadoresService.jugadores;
     this.alineacion = this._alineacionService.alineacion;
-    console.log(this.alineacion);
+
     this.isData = true;
   }
 
-  clickme(posicion: string) {
-    /*let lista = this.jugadores.filter(data => {
-      return data[posicion] == 1;
-    });*/
-    console.log(this.alineacion);
-
-    /**this.navCtrl.push(this.jugadoresPage, {
-      alineacion: this.alineacion
-    });*/
-  }
-
   public getImgJugador(posicion: string): string {
-    // return "assets/images/jugador_vacio.jpg";
-    //console.log(posicion);
-    //return !(typeof this.alineacion[posicion].id === "undefined")
     return this.alineacion[posicion].id
       ? "assets/images/jugadores/" + this.alineacion[posicion].id + ".jpg"
       : "assets/images/jugador_vacio.jpg";
   }
 
   public getImgEntrenador(posicion: string): string {
-    // return "assets/images/jugador_vacio.jpg";
-
     return this.alineacion[posicion].id
       ? "assets/images/entrenadores/" + this.alineacion[posicion].id + ".jpg"
       : "assets/images/entrenadores/entrenador_vacio.jpg";

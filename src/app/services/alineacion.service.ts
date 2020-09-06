@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, ɵConsole } from "@angular/core";
 import { Jugador } from "../models/jugador";
 import { Alineacion } from "../models/alineacion";
 import { Entrenador } from "../models/entrenador";
@@ -18,16 +18,32 @@ export class AlineacionService {
     "EXTREMO_IZQUIERDO"
   ];
   private posicionesDefensa: string[] = [
-    "LATERAL_DERECHO",
     "DEFENSA_DERECHO",
     "DEFENSA_IZQUIERDO",
-    "LATERAL_IZQUIERD0",
+    "LATERAL_DERECHO",
+    "LATERAL_IZQUIERDO",
+    "PORTERO"
+  ];
+
+  private posicionesAtaqueIniciales: string[] = [
+    "DELANTERO_IZQUIERDO",
+    "DELANTERO_DERECHO",
+    "EXTREMO_DERECHO",
+    "CENTRO_DERECHO",
+    "CENTRO_IZQUIERDO",
+    "EXTREMO_IZQUIERDO"
+  ];
+  private posicionesDefensaIniciales: string[] = [
+    "DEFENSA_DERECHO",
+    "DEFENSA_IZQUIERDO",
+    "LATERAL_DERECHO",
+    "LATERAL_IZQUIERDO",
     "PORTERO"
   ];
 
   constructor() {
-    //this.alineacion = new Alineacion();
-    this.cargarAlineacion();
+    this.alineacion = new Alineacion();
+    //this.cargarAlineacion();
   }
 
   cargarAlineacion() {
@@ -36,6 +52,11 @@ export class AlineacionService {
     } else {
       this.alineacion = new Alineacion();
     }
+  }
+
+  guardarAlineacion() {
+    this.actualizarValores();
+    //localStorage.setItem("alineacion", JSON.stringify(this.alineacion));
   }
 
   guardarJugadorPosicion(jugador: Jugador, posicion: string) {
@@ -54,11 +75,6 @@ export class AlineacionService {
     this.guardarAlineacion();
   }
 
-  guardarAlineacion() {
-    this.actualizarValores();
-    localStorage.setItem("alineacion", JSON.stringify(this.alineacion));
-  }
-
   actualizarValores() {
     this.actualizarGanancias();
     this.actualizarAtaque();
@@ -70,7 +86,6 @@ export class AlineacionService {
     Object.keys(this.alineacion).forEach(key => {
       if (typeof this.alineacion[key] == "object") {
         this.alineacion.GANANCIAS += parseInt(this.alineacion[key].sueldo);
-        //console.log(parseInt(this.alineacion[key].sueldo));
       }
     });
   }
@@ -78,13 +93,16 @@ export class AlineacionService {
   actualizarDefensa() {
     let defensa = 0;
     let posiciones: string[];
+    //Obtener posiciones de Ataque
+    posiciones = this.getPosicionesDefensa();
+
     Object.keys(this.alineacion).forEach(key => {
       if (typeof this.alineacion[key] == "object") {
         //Si es Jugador
-        //Obtener posiciones de Ataque
-        posiciones = this.getPosicionesDefensa();
+
         if (posiciones.includes(key)) {
           //Si esta vacio
+
           if (this.alineacion[key].id === null) {
             defensa = defensa - 2;
           } else {
@@ -113,7 +131,6 @@ export class AlineacionService {
           if (this.alineacion[key].id === null) {
             ataque = ataque - 2;
           } else {
-            //debugger;
             ataque += this.calculoPosicion(key, this.alineacion[key], "ATAQUE");
           }
         }
@@ -131,6 +148,7 @@ export class AlineacionService {
         this.alineacion[key] = new Jugador();
       }
     });
+    this.actualizarValores();
   }
 
   eliminarEntrenador(entrenador: Entrenador) {
@@ -140,24 +158,30 @@ export class AlineacionService {
         this.alineacion[key].id === entrenador.id
       ) {
         this.alineacion[key] = new Entrenador();
+        // Restore initial positions
+        if (key === "COACH1") {
+          this.posicionesAtaque = this.posicionesAtaqueIniciales;
+          this.posicionesDefensa = this.posicionesDefensaIniciales;
+        }
       }
     });
+
+    this.actualizarValores();
   }
 
   calculoPosicion(posicion: string, jugador: Jugador, tipo: string): number {
     let puntos: number = 0;
     let aux: any;
-    //console.log(jugador);
+
     switch (posicion) {
       case "DELANTERO_IZQUIERDO":
-        //debugger;
         aux = jugador.tiro;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
-        if (jugador.habArriba === "SHOT") puntos += 2;
+        if (jugador.habArriba === "TIRO") puntos += 2;
         if (
           this.alineacion["EXTREMO_IZQUIERDO"].habDerecha ===
             jugador.habIzquierda &&
-          jugador.habIzquierda === "CROSS"
+          jugador.habIzquierda === "CENTRO"
         )
           puntos += 3;
         if (
@@ -169,11 +193,11 @@ export class AlineacionService {
       case "DELANTERO_DERECHO":
         aux = jugador.tiro;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
-        if (jugador.habArriba === "SHOT") puntos += 2;
+        if (jugador.habArriba === "TIRO") puntos += 2;
         if (
           this.alineacion["EXTREMO_DERECHO"].habIzquierda ===
             jugador.habDerecha &&
-          jugador.habDerecha === "CROSS"
+          jugador.habDerecha === "CENTRO"
         )
           puntos += 3;
         if (
@@ -186,12 +210,11 @@ export class AlineacionService {
         break;
 
       case "EXTREMO_IZQUIERDO":
-        //debugger;
         aux = tipo === "ATAQUE" ? jugador.centrarIzq : jugador.defensaIzq;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (
           this.alineacion["LATERAL_IZQUIERDO"].habArriba === jugador.habAbajo &&
-          jugador.habAbajo === "PASS"
+          jugador.habAbajo === "PASE"
         )
           puntos += 3;
         if (
@@ -203,7 +226,7 @@ export class AlineacionService {
         if (
           this.alineacion["DELANTERO_IZQUIERDO"].habIzquierda ===
             jugador.habDerecha &&
-          jugador.habDerecha === "CROSS"
+          jugador.habDerecha === "CENTRO"
         )
           puntos += 3;
         break;
@@ -264,12 +287,11 @@ export class AlineacionService {
           puntos += 3;
         break;
       case "EXTREMO_DERECHO":
-        //debugger;
         aux = tipo === "ATAQUE" ? jugador.centrarDcha : jugador.defensaDcha;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (
           this.alineacion["LATERAL_DERECHO"].habArriba === jugador.habAbajo &&
-          jugador.habAbajo === "PASS"
+          jugador.habAbajo === "PASE"
         )
           puntos += 3;
         if (
@@ -281,17 +303,16 @@ export class AlineacionService {
         if (
           this.alineacion["DELANTERO_DERECHO"].habDerecha ===
             jugador.habIzquierda &&
-          jugador.habIzquierda === "CROSS"
+          jugador.habIzquierda === "CENTRO"
         )
           puntos += 3;
         break;
       case "LATERAL_IZQUIERDO":
-        //debugger;
         aux = tipo === "ATAQUE" ? jugador.centrarIzq : jugador.defensaIzq;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (
           this.alineacion["EXTREMO_IZQUIERDO"].habAbajo === jugador.habArriba &&
-          jugador.habArriba === "PASS"
+          jugador.habArriba === "PASE"
         )
           puntos += 3;
         if (
@@ -300,7 +321,7 @@ export class AlineacionService {
           jugador.habDerecha !== "NONE"
         )
           puntos += 1;
-        if (jugador.habIzquierda === "TACKLE") puntos += 2;
+        if (jugador.habIzquierda === "ENTRADAS") puntos += 2;
         break;
       case "DEFENSA_IZQUIERDO":
         aux = tipo === "ATAQUE" ? jugador.pase : jugador.entradas;
@@ -322,11 +343,9 @@ export class AlineacionService {
           jugador.habIzquierda !== "NONE"
         )
           puntos += 1;
-        if (jugador.habAbajo === "TACKLE") puntos += 2;
+        if (jugador.habAbajo === "ENTRADAS") puntos += 2;
         break;
       case "DEFENSA_DERECHO":
-        //debugger;
-
         aux = tipo === "ATAQUE" ? jugador.pase : jugador.entradas;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (
@@ -346,15 +365,14 @@ export class AlineacionService {
           jugador.habDerecha !== "NONE"
         )
           puntos += 1;
-        if (jugador.habAbajo === "TACKLE") puntos += 2;
+        if (jugador.habAbajo === "ENTRADAS") puntos += 2;
         break;
       case "LATERAL_DERECHO":
-        //debugger;
         aux = tipo === "ATAQUE" ? jugador.centrarDcha : jugador.defensaDcha;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (
           this.alineacion["EXTREMO_DERECHO"].habAbajo === jugador.habArriba &&
-          jugador.habArriba === "PASS"
+          jugador.habArriba === "PASE"
         )
           puntos += 3;
         if (
@@ -363,11 +381,9 @@ export class AlineacionService {
           jugador.habIzquierda !== "NONE"
         )
           puntos += 1;
-        if (jugador.habDerecha === "TACKLE") puntos += 2;
+        if (jugador.habDerecha === "ENTRADAS") puntos += 2;
         break;
       case "DEFENSA_DERECHO":
-        //debugger;
-
         aux = tipo === "ATAQUE" ? jugador.pase : jugador.entradas;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (
@@ -387,7 +403,7 @@ export class AlineacionService {
           jugador.habDerecha !== "NONE"
         )
           puntos += 1;
-        if (jugador.habAbajo === "TACKLE") puntos += 2;
+        if (jugador.habAbajo === "ENTRADAS") puntos += 2;
         break;
       case "PORTERO":
         //debugger;
@@ -397,7 +413,9 @@ export class AlineacionService {
       default:
         puntos = 0;
     }
-    console.log(posicion, " - ", puntos);
+    // Anadir puntos extra por entrenador
+    puntos += this.getPuntosHabilidad(jugador);
+
     return puntos;
   }
 
@@ -420,6 +438,30 @@ export class AlineacionService {
       calculatedPositionsDefensa = calculatedPositionsDefensa.map(data => {
         if (data !== this.alineacion["COACH1"].posAtaque) return data;
       });
+
     return calculatedPositionsDefensa;
+  }
+
+  getPuntosHabilidad(jugador) {
+    let puntos: number = 0;
+    let listaEntrenadores = ["COACH1", "COACH2", "COACH3"];
+
+    listaEntrenadores.forEach(nombre => {
+      if (this.alineacion[nombre].id) {
+        let entrenador: Entrenador = this.alineacion.getEntrenador(nombre);
+        let habilidadesJugador = jugador.getHabilidades();
+
+        let matches = entrenador.getModificadoresHabilidad().filter(data => {
+          return habilidadesJugador.includes(data);
+        });
+
+        matches.forEach(element => {
+          if (parseInt(entrenador[element]) > 0)
+            puntos += parseInt(entrenador[element]);
+        });
+      }
+    });
+
+    return puntos;
   }
 }

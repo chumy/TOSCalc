@@ -56,4 +56,26 @@ export class Jugador {
     this.DELANTERO_IZQUIERDO = 0;
     this.DELANTERO_DERECHO = 0;
   }
+
+  getHabilidades() {
+    let listaHabilidades: string[] = [];
+
+    if (this.habArriba !== "") {
+      listaHabilidades.push(this.habArriba);
+    }
+
+    if (this.habDerecha !== "") {
+      listaHabilidades.push(this.habDerecha);
+    }
+
+    if (this.habAbajo !== "") {
+      listaHabilidades.push(this.habAbajo);
+    }
+
+    if (this.habIzquierda !== "") {
+      listaHabilidades.push(this.habIzquierda);
+    }
+
+    return listaHabilidades;
+  }
 }

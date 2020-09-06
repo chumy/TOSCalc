@@ -13,7 +13,6 @@ export class EntrenadoresService {
   constructor(private http: HttpClient) {
     this.getEntrenadores().subscribe(data => {
       this.entrenadores = data;
-      console.log(this.entrenadores);
     });
   }
 
@@ -24,8 +23,6 @@ export class EntrenadoresService {
       })
       .pipe(
         map(data => {
-          //console.log(data);
-          //console.log("procesado ", this.CSV2JSON(data));
           return this.CSV2JSON(data);
         })
       );

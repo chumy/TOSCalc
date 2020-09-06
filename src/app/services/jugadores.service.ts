@@ -35,8 +35,6 @@ export class JugadoresService {
       })
       .pipe(
         map(data => {
-          //console.log(data);
-          //console.log("procesado ", this.CSV2JSON(data));
           return this.CSV2JSON(data);
         })
       );
@@ -85,18 +83,16 @@ export class JugadoresService {
 
     for (var i = 2; i < array.length; i++) {
       //objArray[i - 1] = {};
-      //console.log(array);
       let jugador: Jugador = new Jugador();
-      //console.log(jugador);
+
       for (var k = 0; k < array[0].length && k < array[i].length; k++) {
         var key = array[0][k];
         //objArray[i - 1][key] = array[i][k];
-        //console.log(key);
+
         jugador[key] = array[i][k];
       }
-      //console.log(jugador);
+
       objArray.push(jugador);
-      //console.log(jugador);
     }
 
     //var json = JSON.stringify(objArray);

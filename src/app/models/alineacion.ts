@@ -39,4 +39,15 @@ export class Alineacion {
     this.COACH2 = new Entrenador();
     this.COACH3 = new Entrenador();
   }
+
+  getEntrenador(id: string): Entrenador {
+    switch (id) {
+      case "COACH1":
+        return this.COACH1;
+      case "COACH2":
+        return this.COACH2;
+      case "COACH3":
+        return this.COACH3;
+    }
+  }
 }

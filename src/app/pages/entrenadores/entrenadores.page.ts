@@ -26,16 +26,12 @@ export class EntrenadoresPage implements OnInit {
     this.activatedroute.paramMap.subscribe(paramMap => {
       const newLocal = "posicion";
       this.posicion = paramMap.get(newLocal);
-
-      //console.log("recibida posicion ", this.posicion);
       this.entrenadores = this._entrenadoresService.entrenadores;
       this.alineacion = this._alineacionService.alineacion;
-      // console.log(this.entrenadores);
     });
   }
 
   entrenadorSeleccionado(id: string) {
-    //console.log("recibida posicion ", id, " - ", this.posicion);
     let entrenador = this.entrenadores.filter(data => {
       return data["id"] == parseInt(id);
     });
@@ -43,8 +39,7 @@ export class EntrenadoresPage implements OnInit {
       entrenador[0],
       this.posicion
     );
-    //console.log("seleccionado ", jugador);
-    //this._alineacionService.actualizarValores();
+
     this.router.navigateByUrl("/home");
   }
 
@@ -53,8 +48,7 @@ export class EntrenadoresPage implements OnInit {
       return data["id"] == parseInt(id);
     });
     this._alineacionService.eliminarEntrenador(entrenador[0]);
-    //console.log("seleccionado ", jugador);
-    //this._alineacionService.actualizarValores();
+
     this.router.navigateByUrl("/home");
   }
 }

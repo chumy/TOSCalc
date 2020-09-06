@@ -16,8 +16,9 @@
 
       <ion-label (click)="jugadorSeleccionado(jugador.id)">
         <h2>{{jugador.nombre}}</h2>
-        <p>{{jugador.id}}</p>
+        <p>{{jugador.mazo}}</p>
       </ion-label>
+
       <ion-icon
         *ngIf="alineacion[posicion].id === jugador.id"
         slot="end"

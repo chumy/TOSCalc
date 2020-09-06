@@ -45,22 +45,59 @@ ion-card {
   align-items: center;
   justify-content: space-between;
   height: 20vh;
-  margin-left: 5%;
-  margin-right: 5%;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vh;
 }
+
+.fila:nth-child(even) {
+  background: #7aad47;
+}
+.fila:nth-child(odd) {
+  background: #669933;
+}
+
+.fila:first-child {
+  height: 10vh;
+  padding-top: 1vh;
+  background: #8c8c8c;
+}
+
+.fila:last-child {
+  background: #8c8c8c;
+}
+
 .jugador {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   padding-bottom: 1em;
-  height: 15vh;
-  width: 20vw;
+  //height: 15vh;
+  width: 15vw;
+  align-content: center;
 }
 
 .jugador img {
-  max-height: 100%;
+  max-height: 132px;
+}
+
+.jugador p {
+  margin: 0;
+  //font-size: 3vw;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .marcador {
   size: 100px;
   flex: 1;
   font-size: larger;
+  align-content: center;
+}
+
+.marcador p {
+  text-align: center;
+  vertical-align: middle;
 }

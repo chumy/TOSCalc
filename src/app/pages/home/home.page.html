@@ -1,5 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>TOS Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <div class="container" *ngIf="isData">
+    <div class="fila">
+      <div class="marcador">
+        <p>
+          <b>
+            <ion-icon
+              name="football"
+              style="zoom:2.0;"
+              color="warning"
+            ></ion-icon>
+
+            {{alineacion.ATAQUE}}
+          </b>
+        </p>
+      </div>
+      <div class="marcador">
+        <p>
+          <b>
+            <ion-icon
+              name="shield"
+              style="zoom:2.0;"
+              color="primary"
+            ></ion-icon>
+
+            {{alineacion.DEFENSA}}
+          </b>
+        </p>
+      </div>
+      <div class="marcador">
+        <p>
+          <b>
+            <ion-icon
+              name="cash-outline"
+              style="zoom:2.0;"
+              color="success"
+            ></ion-icon>
+
+            {{alineacion.GANANCIAS}}
+          </b>
+        </p>
+      </div>
+    </div>
+
     <div class="fila">
       <div class="jugador"></div>
       <div class="jugador">
@@ -7,7 +54,7 @@
           [src]="getImgJugador('DELANTERO_IZQUIERDO')"
           [routerLink]="['/jugadores','DELANTERO_IZQUIERDO']"
         />
-        {{ alineacion['DELANTERO_IZQUIERDO'].nombre }}
+        <p>{{ alineacion['DELANTERO_IZQUIERDO'].nombre }}</p>
       </div>
 
       <div class="jugador">
@@ -15,7 +62,7 @@
           [src]="getImgJugador('DELANTERO_DERECHO')"
           [routerLink]="['/jugadores','DELANTERO_DERECHO']"
         />
-        {{ alineacion['DELANTERO_DERECHO'].nombre }}
+        <p>{{ alineacion['DELANTERO_DERECHO'].nombre }}</p>
       </div>
       <div class="jugador"></div>
     </div>
@@ -26,7 +73,7 @@
           [src]="getImgJugador('EXTREMO_IZQUIERDO')"
           [routerLink]="['/jugadores','EXTREMO_IZQUIERDO']"
         />
-        {{ alineacion['EXTREMO_IZQUIERDO'].nombre }}
+        <p>{{ alineacion['EXTREMO_IZQUIERDO'].nombre }}</p>
       </div>
 
       <div class="jugador">
@@ -34,7 +81,7 @@
           [src]="getImgJugador('CENTRO_IZQUIERDO')"
           [routerLink]="['/jugadores','CENTRO_IZQUIERDO']"
         />
-        {{ alineacion['CENTRO_IZQUIERDO'].nombre }}
+        <p>{{ alineacion['CENTRO_IZQUIERDO'].nombre }}</p>
       </div>
 
       <div class="jugador">
@@ -42,7 +89,7 @@
           [src]="getImgJugador('CENTRO_DERECHO')"
           [routerLink]="['/jugadores','CENTRO_DERECHO']"
         />
-        {{ alineacion['CENTRO_DERECHO'].nombre }}
+        <p>{{ alineacion['CENTRO_DERECHO'].nombre }}</p>
       </div>
 
       <div class="jugador">
@@ -50,7 +97,7 @@
           [src]="getImgJugador('EXTREMO_DERECHO')"
           [routerLink]="['/jugadores','EXTREMO_DERECHO']"
         />
-        {{ alineacion['EXTREMO_DERECHO'].nombre }}
+        <p>{{ alineacion['EXTREMO_DERECHO'].nombre }}</p>
       </div>
     </div>
     <div class="fila">
@@ -59,14 +106,14 @@
           [src]="getImgJugador('LATERAL_IZQUIERDO')"
           [routerLink]="['/jugadores','LATERAL_IZQUIERDO']"
         />
-        {{ alineacion['LATERAL_IZQUIERDO'].nombre }}
+        <p>{{ alineacion['LATERAL_IZQUIERDO'].nombre }}</p>
       </div>
       <div class="jugador">
         <img
           [src]="getImgJugador('DEFENSA_IZQUIERDO')"
           [routerLink]="['/jugadores','DEFENSA_IZQUIERDO']"
         />
-        {{ alineacion['DEFENSA_IZQUIERDO'].nombre }}
+        <p>{{ alineacion['DEFENSA_IZQUIERDO'].nombre }}</p>
       </div>
 
       <div class="jugador">
@@ -74,7 +121,7 @@
           [src]="getImgJugador('DEFENSA_DERECHO')"
           [routerLink]="['/jugadores','DEFENSA_DERECHO']"
         />
-        {{ alineacion['DEFENSA_DERECHO'].nombre }}
+        <p>{{ alineacion['DEFENSA_DERECHO'].nombre }}</p>
       </div>
 
       <div class="jugador">
@@ -82,7 +129,7 @@
           [src]="getImgJugador('LATERAL_DERECHO')"
           [routerLink]="['/jugadores','LATERAL_DERECHO']"
         />
-        {{ alineacion['LATERAL_DERECHO'].nombre }}
+        <p>{{ alineacion['LATERAL_DERECHO'].nombre }}</p>
       </div>
     </div>
     <div class="fila">
@@ -92,7 +139,7 @@
           [src]="getImgJugador('PORTERO')"
           [routerLink]="['/jugadores','PORTERO']"
         />
-        {{alineacion['PORTERO'].nombre}}
+        <p>{{alineacion['PORTERO'].nombre}}</p>
       </div>
       <div class="jugador"></div>
     </div>
@@ -103,7 +150,7 @@
           [src]="getImgEntrenador('COACH1')"
           [routerLink]="['/entrenadores', 'COACH1']"
         />
-        {{alineacion['COACH1'].nombre}}
+        <p>{{alineacion['COACH1'].nombre}}</p>
       </div>
 
       <div class="jugador">
@@ -111,7 +158,7 @@
           [src]="getImgEntrenador('COACH2')"
           [routerLink]="['/entrenadores','COACH2']"
         />
-        {{alineacion['COACH2'].nombre}}
+        <p>{{alineacion['COACH2'].nombre}}</p>
       </div>
 
       <div class="jugador">
@@ -119,36 +166,7 @@
           [src]="getImgEntrenador('COACH3')"
           [routerLink]="['/entrenadores','COACH3']"
         />
-        {{alineacion['COACH3'].nombre}}
-      </div>
-    </div>
-
-    <div class="fila">
-      <div class="marcador">
-        <b
-          ><ion-icon
-            name="football"
-            style="zoom:3.0;"
-            color="warning"
-          ></ion-icon
-        ></b>
-        {{alineacion.ATAQUE}}
-      </div>
-      <div class="marcador">
-        <b
-          ><ion-icon name="shield" style="zoom:3.0;" color="primary"></ion-icon
-        ></b>
-        {{alineacion.DEFENSA}}
-      </div>
-      <div class="marcador">
-        <b>
-          <ion-icon
-            name="cash-outline"
-            style="zoom:3.0;"
-            color="success"
-          ></ion-icon
-        ></b>
-        {{alineacion.GANANCIAS}}
+        <p>{{alineacion['COACH3'].nombre}}</p>
       </div>
     </div>
   </div>

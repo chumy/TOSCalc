@@ -4,11 +4,11 @@ export class Entrenador {
   mazo: string;
   sueldo: number;
   precio: number;
-  tiro: number;
-  entradas: number;
-  pase: number;
-  equipo: number;
-  centro: number;
+  TIRO: number;
+  ENTRADAS: number;
+  PASE: number;
+  EQUIPO: number;
+  CENTRO: number;
   posAtaque: string;
   posDefensa: string;
 
@@ -18,11 +18,24 @@ export class Entrenador {
     this.mazo = "";
     this.sueldo = 0;
     this.precio = 0;
-    this.pase = 0;
-    this.tiro = 0;
-    this.entradas = 0;
-    this.equipo = 0;
-    this.posAtaque = "";
-    this.posDefensa = "";
+    this.PASE = 0;
+    this.TIRO = 0;
+    this.ENTRADAS = 0;
+    this.EQUIPO = 0;
+    this.CENTRO = 0;
+    this.posAtaque = "NONE";
+    this.posDefensa = "NONE";
+  }
+
+  getModificadoresHabilidad() {
+    let modificadores: string[] = [];
+
+    if (this.CENTRO > 0) modificadores.push("CENTRO");
+    if (this.PASE > 0) modificadores.push("PASE");
+    if (this.TIRO > 0) modificadores.push("TIRO");
+    if (this.ENTRADAS > 0) modificadores.push("ENTRADAS");
+    if (this.EQUIPO > 0) modificadores.push("EQUIPO");
+
+    return modificadores;
   }
 }
