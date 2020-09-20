@@ -44,7 +44,7 @@ ion-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 20vh;
+  height: auto;
   padding-left: 5vw;
   padding-right: 5vw;
   padding-top: 2vh;
@@ -83,7 +83,7 @@ ion-card {
 
 .jugador p {
   margin: 0;
-  //font-size: 3vw;
+  font-size: calc(0.8em + 0.5vw);
   display: block;
   text-align: center;
   overflow: hidden;
