@@ -33,8 +33,8 @@ export class Alineacion {
     this.LATERAL_IZQUIERDO = new Jugador();
     this.PORTERO = new Jugador();
     this.GANANCIAS = 0;
-    this.DEFENSA = 0;
-    this.ATAQUE = 0;
+    this.DEFENSA = -10;
+    this.ATAQUE = -12;
     this.COACH1 = new Entrenador();
     this.COACH2 = new Entrenador();
     this.COACH3 = new Entrenador();

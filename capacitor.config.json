@@ -1,9 +1,10 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "es.chumy.toscalc",
   "appName": "TOSCalc",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
+  "linuxAndroidStudioPath": "/usr/bin/android-studio",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0
