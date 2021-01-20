@@ -81,7 +81,7 @@ export class JugadoresService {
 
     //jugador2.put(variable, "2");
 
-    for (var i = 2; i < array.length; i++) {
+    for (var i = 1; i < array.length; i++) {
       //objArray[i - 1] = {};
       let jugador: Jugador = new Jugador();
 

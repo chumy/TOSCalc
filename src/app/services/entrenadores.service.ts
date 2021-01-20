@@ -65,7 +65,7 @@ export class EntrenadoresService {
 
     var objArray: Entrenador[] = [];
 
-    for (var i = 2; i < array.length; i++) {
+    for (var i = 1; i < array.length; i++) {
       let entrenador: Entrenador = new Entrenador();
 
       for (var k = 0; k < array[0].length && k < array[i].length; k++) {
