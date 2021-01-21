@@ -70,7 +70,7 @@ export class HomePage implements OnInit {
   public getImgEntrenador(posicion: string): string {
     return this.alineacion[posicion].id
       ? "assets/images/entrenadores/" + this.alineacion[posicion].id + ".jpg"
-      : "assets/images/entrenadores/entrenador_vacio.jpg";
+      : "assets/images/entrenadores/entrenador_vacio_gris.jpg";
   }
 
 

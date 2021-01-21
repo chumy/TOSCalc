@@ -26,8 +26,11 @@ export class EntrenadoresPage implements OnInit {
     this.activatedroute.paramMap.subscribe(paramMap => {
       const newLocal = "posicion";
       this.posicion = paramMap.get(newLocal);
-      this.entrenadores = this._entrenadoresService.entrenadores;
+      
       this.alineacion = this._alineacionService.alineacion;
+      
+      this.entrenadores = this._entrenadoresService.entrenadores;
+      
     });
   }
 

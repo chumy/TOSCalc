@@ -69,7 +69,7 @@ export class AlineacionService {
 
   guardarEntrenadorPosicion(entrenador: Entrenador, posicion: string) {
     //Chequear que no exista previamente
-    //this.eliminarJugador(entrenador);
+    this.eliminarEntrenador(entrenador);
 
     this.alineacion[posicion] = entrenador;
     this.guardarAlineacion();
