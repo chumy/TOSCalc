@@ -11,6 +11,7 @@ export class Entrenador {
   CENTRO: number;
   posAtaque: string;
   posDefensa: string;
+  isEntrenador: boolean;
 
   constructor() {
     this.nombre = "";
@@ -24,7 +25,8 @@ export class Entrenador {
     this.EQUIPO = 0;
     this.CENTRO = 0;
     this.posAtaque = "NONE";
-    this.posDefensa = "NONE";
+    this.posDefensa = "NONE"
+    this.isEntrenador = true;
   }
 
   getModificadoresHabilidad() {

@@ -19,6 +19,12 @@ export class Alineacion {
   COACH1: Entrenador;
   COACH2: Entrenador;
   COACH3: Entrenador;
+  BENCH1: Entrenador;
+  BENCH2: Entrenador;
+  BENCH3: Entrenador;
+  BENCH4: Entrenador;
+  BENCH5: Entrenador;
+
 
   constructor() {
     this.DELANTERO_IZQUIERDO = new Jugador();
@@ -32,12 +38,18 @@ export class Alineacion {
     this.DEFENSA_IZQUIERDO = new Jugador();
     this.LATERAL_IZQUIERDO = new Jugador();
     this.PORTERO = new Jugador();
-    this.GANANCIAS = 0;
+    this.GANANCIAS = -22;
     this.DEFENSA = -10;
     this.ATAQUE = -12;
     this.COACH1 = new Entrenador();
     this.COACH2 = new Entrenador();
     this.COACH3 = new Entrenador();
+    this.BENCH1 = new Entrenador();
+    this.BENCH2 = new Entrenador();
+    this.BENCH2 = new Entrenador();
+    this.BENCH3 = new Entrenador();
+    this.BENCH4 = new Entrenador();
+    this.BENCH5 = new Entrenador();
   }
 
   getEntrenador(id: string): Entrenador {

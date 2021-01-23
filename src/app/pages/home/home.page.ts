@@ -57,7 +57,6 @@ export class HomePage implements OnInit {
 
   async ngOnInit() {
     this.alineacion = this._alineacionService.alineacion;
-
     this.isData = true;
   }
 
@@ -72,6 +71,16 @@ export class HomePage implements OnInit {
       ? "assets/images/entrenadores/" + this.alineacion[posicion].id + ".jpg"
       : "assets/images/entrenadores/entrenador_vacio_gris.jpg";
   }
+
+  public getImgBench(posicion: string): string {
+    
+    let tipo = (!!this.alineacion[posicion].isEntrenador) ? 'entrenadores' : 'jugadores';
+
+    return this.alineacion[posicion].id
+      ? "assets/images/" + tipo + "/" + this.alineacion[posicion].id + ".jpg"
+      : "assets/images/bench.jpg";
+  }
+
 
 
  

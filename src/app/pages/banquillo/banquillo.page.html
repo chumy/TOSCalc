@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>banquillo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item >
+      <ion-avatar slot="start">
+        <img *ngIf="alineacion[posicion].isEntrenador" src="assets/images/entrenadores/{{alineacion[posicion].id}}.jpg" />
+        <img *ngIf="alineacion[posicion].isJugador" src="assets/images/jugadores/{{alineacion[posicion].id}}.jpg" />
+      </ion-avatar>
+  
+      <ion-label >
+        <h2>{{alineacion[posicion].nombre}}</h2>
+        <p>{{alineacion[posicion].mazo}}</p>
+      </ion-label>
+      <ion-icon  slot="end" name="close-circle" style="color:red"
+        (click)="removeBanquillo(posicion)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

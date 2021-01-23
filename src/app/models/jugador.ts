@@ -26,12 +26,13 @@ export class Jugador {
   EXTREMO_DERECHO: number;
   DELANTERO_IZQUIERDO: number;
   DELANTERO_DERECHO: number;
+  isJugador: boolean;
 
   constructor() {
     this.nombre = null;
     this.id = null;
     this.mazo = "";
-    this.sueldo = 0;
+    this.sueldo = -2;
     this.precio = 0;
     this.pase = 0;
     this.tiro = 0;
@@ -55,6 +56,7 @@ export class Jugador {
     this.EXTREMO_DERECHO = 0;
     this.DELANTERO_IZQUIERDO = 0;
     this.DELANTERO_DERECHO = 0;
+    this.isJugador = true;
   }
 
   getHabilidades() {

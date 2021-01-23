@@ -5,6 +5,7 @@
 </ion-header>
 <ion-content>
   <div class="container" *ngIf="isData">
+
     <div class="fila">
       <div class="marcador">
         <p>
@@ -118,6 +119,7 @@
         </p>
       </div>
     </div>
+
     <div class="fila">
       <div class="jugador">
         <img
@@ -162,6 +164,7 @@
         </p>
       </div>
     </div>
+
     <div class="fila">
       <div class="jugador"></div>
       <div class="jugador">
@@ -177,7 +180,7 @@
       <div class="jugador"></div>
     </div>
 
-    <div class="fila">
+    <div class="fila color_entrenador">
       <div class="jugador">
         <img
           [src]="getImgEntrenador('COACH1')"
@@ -211,5 +214,48 @@
         </p>
       </div>
     </div>
+
+    <div class="fila color_banquillo">
+      <div class="jugador">
+        <img [src]="getImgBench('BENCH1')" [routerLink]="alineacion['BENCH1'].id !=null ? ['/banquillo', 'BENCH1'] : []" />
+        <p>
+          {{ (alineacion['BENCH1'].nombre) ? alineacion['BENCH1'].nombre :
+          '&nbsp;' }}
+        </p>
+      </div>
+    
+      <div class="jugador">
+        <img [src]="getImgBench('BENCH2')" [routerLink]="alineacion['BENCH2'].id !=null ? ['/banquillo', 'BENCH2'] : []" />
+        <p>
+          {{(alineacion['BENCH2'].nombre) ? alineacion['COACH2'].nombre :
+          '&nbsp;' }}
+        </p>
+      </div>
+    
+      <div class="jugador">
+        <img [src]="getImgBench('BENCH3')" [routerLink]="alineacion['BENCH3'].id !=null ? ['/banquillo', 'BENCH3'] : []" />
+        <p>
+          {{(alineacion['BENCH3'].nombre) ? alineacion['BENCH3'].nombre :
+          '&nbsp;' }}
+        </p>
+      </div>
+      <div class="jugador">
+        <img [src]="getImgBench('BENCH4')" [routerLink]="alineacion['BENCH4'].id !=null ? ['/banquillo', 'BENCH4'] : []" />
+        <p>
+          {{(alineacion['BENCH4'].nombre) ? alineacion['BENCH4'].nombre :
+          '&nbsp;' }}
+        </p>
+      </div>
+      <div class="jugador">
+        <img [src]="getImgBench('BENCH5')" [routerLink]="alineacion['BENCH5'].id !=null ? ['/banquillo', 'BENCH5'] : []" />
+        <p>
+          {{(alineacion['BENCH5'].nombre) ? alineacion['BENCH5'].nombre :
+          '&nbsp;' }}
+        </p>
+      </div>
+
+    </div>
+
   </div>
+  
 </ion-content>

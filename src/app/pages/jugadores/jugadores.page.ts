@@ -52,4 +52,16 @@ export class JugadoresPage implements OnInit {
 
     this.router.navigateByUrl("/home");
   }
+
+  sendBanquillo(id: string) {
+    let jugador = this.jugadores.filter(data => {
+      return data["id"] == parseInt(id);
+    });
+    
+    this.removeJugador(id);
+    this._alineacionService.enviarJugadorBanquillo(jugador[0]);
+
+    this.router.navigateByUrl("/home");
+  }
+
 }

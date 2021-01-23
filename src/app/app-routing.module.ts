@@ -58,7 +58,22 @@ const routes: Routes = [
       import("./pages/patrocinadores/patrocinadores.module").then(
         m => m.PatrocinadoresPageModule
       )
-  }
+  },
+
+  {
+    path: 'banquillo',
+    children: [
+      {
+        path: "",
+        redirectTo: "home",
+        pathMatch: "full"
+      },
+      {
+        path: ":posicion",
+        loadChildren: () => import('./pages/banquillo/banquillo.module').then(m => m.BanquilloPageModule)
+      },
+    ]
+  },
 ];
 
 @NgModule({

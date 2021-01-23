@@ -18,6 +18,8 @@
         <h2>{{jugador.nombre}}</h2>
         <p>{{jugador.mazo}}</p>
       </ion-label>
+<ion-icon *ngIf="alineacion[posicion].id === jugador.id" slot="end" name="repeat-outline"
+  style="color:rgb(41, 41, 41)" (click)="sendBanquillo(jugador.id)"></ion-icon>
 
       <ion-icon
         *ngIf="alineacion[posicion].id === jugador.id"

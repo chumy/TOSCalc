@@ -54,4 +54,15 @@ export class EntrenadoresPage implements OnInit {
 
     this.router.navigateByUrl("/home");
   }
+
+  sendBanquillo(id: string) {
+    let entrenador = this.entrenadores.filter(data => {
+      return data["id"] == parseInt(id);
+    });
+    
+    this.removeJugador(id);
+    this._alineacionService.enviarEntrenadorBanquillo(entrenador[0]);
+
+    this.router.navigateByUrl("/home");
+  }
 }

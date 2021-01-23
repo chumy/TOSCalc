@@ -158,14 +158,31 @@ export class AlineacionService {
         this.alineacion[key].id === entrenador.id
       ) {
         this.alineacion[key] = new Entrenador();
-        // Restore initial positions
+        
         if (key === "COACH1") {
-          this.posicionesAtaque = this.posicionesAtaqueIniciales;
-          this.posicionesDefensa = this.posicionesDefensaIniciales;
+
+          if (this.alineacion["COACH2"].id != null) {
+            this.alineacion[key] = this.alineacion["COACH2"];
+            this.alineacion["COACH2"] = new Entrenador();
+          }
+          else if (this.alineacion["COACH3"].id != null) {
+            this.alineacion[key] = this.alineacion["COACH3"];
+            this.alineacion["COACH3"] = new Entrenador();
+          } else {
+            // Restore initial positions
+            this.posicionesAtaque = this.posicionesAtaqueIniciales;
+            this.posicionesDefensa = this.posicionesDefensaIniciales;
+          }
         }
       }
     });
 
+    this.actualizarValores();
+  }
+
+   eliminarBanquillo(posicion) {
+    
+    this.alineacion[posicion] = new Entrenador();
     this.actualizarValores();
   }
 
@@ -464,4 +481,37 @@ export class AlineacionService {
 
     return puntos;
   }
+
+
+
+  getFreeBench() {
+
+    let listaBanquillos = ["BENCH1", "BENCH2", "BENCH3", "BENCH4", "BENCH5"];
+    let freeBench : string = "BENCH5";
+    var keepGoing = true;
+
+    listaBanquillos.forEach(posicion => {
+      if (keepGoing) {
+        if (this.alineacion[posicion].id == null) {
+          freeBench = posicion;
+          keepGoing = false;
+        }
+      }
+    });
+    
+    return freeBench;
+    
+  }
+    enviarEntrenadorBanquillo(entrenador) {
+    let posicion = this.getFreeBench();
+      this.alineacion[posicion] = entrenador;
+      this.actualizarGanancias();
+    }
+  
+  enviarJugadorBanquillo(jugador) {
+    let posicion = this.getFreeBench();
+    this.alineacion[posicion] = jugador;
+    this.actualizarGanancias();
+    }
+  
 }
