@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Empleados</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let empleado of empleados">
+      <ion-avatar slot="start" (click)="empleadoSeleccionado(empleado.id, posicion)">
+        <img src="assets/images/empleados/{{empleado.id}}.jpg" />
+      </ion-avatar>
+
+      <ion-label (click)="empleadoSeleccionado(empleado.id, posicion)">
+        <h2>{{empleado.nombre}}</h2>
+        <p>{{empleado.mazo}}</p>
+      </ion-label>
+      <ion-icon *ngIf="alineacion[posicion].id === empleado.id" slot="end" name="close-circle" style="color:red"
+        (click)="removeEmpleado(posicion)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,5 +1,7 @@
 import { Jugador } from "./jugador";
 import { Entrenador } from "./entrenador";
+import { Empleado } from "./empleado";
+import { Patrocinador } from "./patrocinador";
 
 export class Alineacion {
   DELANTERO_IZQUIERDO: Jugador;
@@ -24,6 +26,12 @@ export class Alineacion {
   BENCH3: Entrenador;
   BENCH4: Entrenador;
   BENCH5: Entrenador;
+  AFICION: number;
+  OJEADOR: Empleado;
+  AGENTE: Empleado;
+  CM: Empleado;
+  TV: Patrocinador;
+  VALLA: Patrocinador;
 
 
   constructor() {
@@ -38,7 +46,7 @@ export class Alineacion {
     this.DEFENSA_IZQUIERDO = new Jugador();
     this.LATERAL_IZQUIERDO = new Jugador();
     this.PORTERO = new Jugador();
-    this.GANANCIAS = -22;
+    this.GANANCIAS = -9;
     this.DEFENSA = -10;
     this.ATAQUE = -12;
     this.COACH1 = new Entrenador();
@@ -50,6 +58,12 @@ export class Alineacion {
     this.BENCH3 = new Entrenador();
     this.BENCH4 = new Entrenador();
     this.BENCH5 = new Entrenador();
+    this.AFICION = 13;
+    this.OJEADOR = new Empleado();
+    this.AGENTE = new Empleado();
+    this.CM = new Empleado();
+    this.VALLA = new Patrocinador();
+    this.TV = new Patrocinador();
   }
 
   getEntrenador(id: string): Entrenador {

@@ -1,5 +1,10 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" menu="primerMenu">
+
+      </ion-menu-button>
+    </ion-buttons>
     <ion-title>TOS Calculator</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -227,7 +232,7 @@
       <div class="jugador">
         <img [src]="getImgBench('BENCH2')" [routerLink]="alineacion['BENCH2'].id !=null ? ['/banquillo', 'BENCH2'] : []" />
         <p>
-          {{(alineacion['BENCH2'].nombre) ? alineacion['COACH2'].nombre :
+          {{(alineacion['BENCH2'].nombre) ? alineacion['BENCH2'].nombre :
           '&nbsp;' }}
         </p>
       </div>

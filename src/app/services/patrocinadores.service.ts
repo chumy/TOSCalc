@@ -1,24 +1,25 @@
-import { Injectable } from "@angular/core";
-import { Entrenador } from "../models/entrenador";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
-import { Observable } from "rxjs";
+import { Patrocinador } from '../models/patrocinador';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
-export class EntrenadoresService {
-  public entrenadores: Entrenador[];
+export class PatrocinadoresService {
+
+   public patrocinadores: Patrocinador[];
 
   constructor(private http: HttpClient) {
-    this.getEntrenadores().subscribe(data => {
-      this.entrenadores = data;
+    this.getPatrocinadores().subscribe(data => {
+      this.patrocinadores = data;
     });
   }
 
-  public getEntrenadores(): Observable<Entrenador[]> {
+  public getPatrocinadores(): Observable<Patrocinador[]> {
     return this.http
-      .get("./assets/data/coaches_data.csv", {
+      .get("./assets/data/patrocinadores_data.csv", {
         responseType: "text"
       })
       .pipe(
@@ -63,29 +64,31 @@ export class EntrenadoresService {
   CSV2JSON(csv) {
     var array = this.CSVToArray(csv, ",");
 
-    var objArray: Entrenador[] = [];
+    var objArray: Patrocinador[] = [];
 
     for (var i = 1; i < array.length; i++) {
-      let entrenador: Entrenador = new Entrenador();
+      let patrocinador: Patrocinador = new Patrocinador();
 
       for (var k = 0; k < array[0].length && k < array[i].length; k++) {
         var key = array[0][k];
 
-        entrenador[key] = array[i][k];
+        patrocinador[key] = array[i][k];
+        
       }
 
-      objArray.push(entrenador);
+      objArray.push(patrocinador);
+   
     }
 
     return objArray;
   }
 
-  public getEntrenador(id: number) {
+  getPatrocinador(id: number) {
     
-   let entrenador = this.entrenadores.filter(data => {
+   let patrocinador = this.patrocinadores.filter(data => {
       return data["id"] == id;
    });
     
-    return entrenador[0];
+    return patrocinador[0];
   }
 }

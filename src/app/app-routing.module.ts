@@ -21,8 +21,6 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        //loadChildren: () =>
-        //  import("./home/home.module").then(m => m.HomePageModule)
         redirectTo: "home",
         pathMatch: "full"
       },
@@ -54,10 +52,20 @@ const routes: Routes = [
   },
   {
     path: "patrocinadores",
-    loadChildren: () =>
-      import("./pages/patrocinadores/patrocinadores.module").then(
+     children: [
+      {
+        path: "",
+        redirectTo: "club",
+        pathMatch: "full"
+      },
+      {
+        path: ":posicion",
+        loadChildren: () =>
+          import("./pages/patrocinadores/patrocinadores.module").then(
         m => m.PatrocinadoresPageModule
-      )
+          )
+      }
+    ]
   },
 
   {
@@ -72,6 +80,28 @@ const routes: Routes = [
         path: ":posicion",
         loadChildren: () => import('./pages/banquillo/banquillo.module').then(m => m.BanquilloPageModule)
       },
+    ]
+  },
+  {
+    path: "club",
+    loadChildren: () =>
+      import("./pages/club/club.module").then(m => m.ClubPageModule)
+  },
+  {
+    path: "empleados",
+    children: [
+      {
+        path: "",
+        redirectTo: "home",
+        pathMatch: "full"
+      },
+      {
+        path: ":posicion",
+        loadChildren: () =>
+          import("./pages/empleados/empleados.module").then(
+            m => m.EmpleadosPageModule
+          )
+      }
     ]
   },
 ];

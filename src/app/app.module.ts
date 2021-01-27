@@ -10,15 +10,18 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { ImgJugadorPipe } from './pipes/img-jugador.pipe';
+import { MenuComponent } from "./components/menu/menu.component";
+
 
 @NgModule({
-  declarations: [AppComponent, ImgJugadorPipe],
+  declarations: [AppComponent, ImgJugadorPipe, MenuComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [
     StatusBar,

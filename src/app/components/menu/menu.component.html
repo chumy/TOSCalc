@@ -1,0 +1,23 @@
+<ion-menu side="start" menuId="primerMenu" contentId="main">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+      <ion-item  [routerLink]="['/home']">
+        <ion-icon slot="start" name="football-outline"></ion-icon>
+        <ion-label>Alineacion</ion-label>
+      </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item  [routerLink]="['/club']">
+            <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+            <ion-label>Club</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>

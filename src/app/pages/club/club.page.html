@@ -1,0 +1,106 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" menu="primerMenu">
+
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>TOS Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="fila">
+    <div class="marcador">
+      <p>
+        <b>
+          <ion-icon name="football" style="zoom:2.0;" color="warning"></ion-icon>
+  
+          {{alineacion.ATAQUE}}
+        </b>
+      </p>
+    </div>
+    <div class="marcador">
+      <p>
+        <b>
+          <ion-icon name="shield" style="zoom:2.0;" color="primary"></ion-icon>
+  
+          {{alineacion.DEFENSA}}
+        </b>
+      </p>
+    </div>
+    <div class="marcador">
+      <p>
+        <b>
+          <ion-icon name="cash-outline" style="zoom:2.0;" color="success"></ion-icon>
+  
+          {{alineacion.GANANCIAS}}
+        </b>
+      </p>
+    </div>
+  </div>
+
+  <ion-item>
+    <ion-label>Aficion
+    </ion-label>
+    <ion-range  dualKnobs="true" pin min="10" max="20" step="1" snaps="true" color="warning" [(ngModel)]="aficion" (ionChange)="setAficion(aficion)"  ></ion-range>
+  </ion-item>
+
+
+
+  
+  <div class="fila">
+
+    <div class="jugador"></div>
+
+    <div class="jugador">
+      <img [src]="getImgPatrocinador('VALLA')" [routerLink]="['/patrocinadores','VALLA']" />
+      <p>
+       
+      </p>
+    </div>
+
+    <div class="jugador"></div>
+    
+    <div class="jugador">
+      <img [src]="getImgPatrocinador('TV')" [routerLink]="['/patrocinadores','TV']" />
+      <p>
+        
+      </p>
+    </div>
+    
+    <div class="jugador"></div>
+
+  </div>
+
+ 
+    <div class="fila">
+      
+      <div class="jugador"></div>
+
+      <div class="jugador">
+        <img [src]="getImgEmpleado('OJEADOR')" [routerLink]="['/empleados','OJEADOR']" />
+        <p>
+    
+        </p>
+      </div>
+    <div class="jugador">
+      <img [src]="getImgEmpleado('CM')" [routerLink]="['/empleados','CM']" />
+      <p>
+    
+      </p>
+    </div>
+
+      <div class="jugador">
+        <img [src]="getImgEmpleado('AGENTE')" [routerLink]="['/empleados','AGENTE']" />
+        <p>
+    
+        </p>
+      </div>
+  <div class="jugador"></div>
+    </div>
+    
+  
+
+
+</ion-content>

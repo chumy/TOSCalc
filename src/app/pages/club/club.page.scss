@@ -1,0 +1,32 @@
+.fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vh;
+}
+
+.jugador {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-bottom: 1em;
+  //height: 15vh;
+  width: 15vw;
+  align-content: center;
+}
+
+.jugador img {
+  max-height: 132px;
+}
+
+.jugador p {
+  margin: 0;
+  font-size: calc(0.8em + 0.5vw);
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -2,6 +2,9 @@ import { Injectable, ɵConsole } from "@angular/core";
 import { Jugador } from "../models/jugador";
 import { Alineacion } from "../models/alineacion";
 import { Entrenador } from "../models/entrenador";
+import { EmpleadosService } from "./empleados.service";
+import { Empleado } from "../models/empleado";
+import { Patrocinador } from "../models/patrocinador";
 
 @Injectable({
   providedIn: "root"
@@ -41,8 +44,9 @@ export class AlineacionService {
     "PORTERO"
   ];
 
-  constructor() {
+  constructor( private _empleadoService: EmpleadosService) {
     this.alineacion = new Alineacion();
+    let empleados = _empleadoService.empleados;
     //this.cargarAlineacion();
   }
 
@@ -75,6 +79,18 @@ export class AlineacionService {
     this.guardarAlineacion();
   }
 
+    guardarEmpleadoPosicion(empleado: Empleado, posicion: string) {
+    //Chequear que no exista previamente
+
+    this.alineacion[posicion] = empleado;
+    this.guardarAlineacion();
+  }
+
+    guardarPatrocinadorPosicion(patrocinador: Patrocinador, posicion: string) {
+    //Chequear que no exista previamente
+    this.alineacion[posicion] = patrocinador;
+    this.guardarAlineacion();
+  }
   actualizarValores() {
     this.actualizarGanancias();
     this.actualizarAtaque();
@@ -82,7 +98,7 @@ export class AlineacionService {
   }
 
   actualizarGanancias() {
-    this.alineacion.GANANCIAS = 0;
+    this.alineacion.GANANCIAS = this.alineacion.AFICION;
     Object.keys(this.alineacion).forEach(key => {
       if (typeof this.alineacion[key] == "object") {
         this.alineacion.GANANCIAS += parseInt(this.alineacion[key].sueldo);
@@ -183,6 +199,18 @@ export class AlineacionService {
    eliminarBanquillo(posicion) {
     
     this.alineacion[posicion] = new Entrenador();
+    this.actualizarValores();
+   }
+  
+   eliminarPatrocinador(posicion) {
+    
+    this.alineacion[posicion] = new Patrocinador();
+    this.actualizarValores();
+   }
+  
+  eliminarEmpleado(posicion) {
+    
+    this.alineacion[posicion] = new Empleado();
     this.actualizarValores();
   }
 
@@ -514,4 +542,13 @@ export class AlineacionService {
     this.actualizarGanancias();
     }
   
+  setAficion(valor) {
+    this.alineacion['AFICION'] = valor;
+    this.actualizarGanancias();
+  }
+
+  setEmpleado(empleado, posicion) {
+    this.alineacion[posicion] = empleado;
+    this.actualizarGanancias();
+  }
 }

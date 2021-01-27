@@ -1,28 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Alineacion } from 'src/app/models/alineacion';
-import { Patrocinador } from 'src/app/models/patrocinador';
+import { Empleado } from 'src/app/models/empleado';
 import { AlineacionService } from 'src/app/services/alineacion.service';
-import { PatrocinadoresService } from 'src/app/services/patrocinadores.service';
+import { EmpleadosService } from 'src/app/services/empleados.service';
 
 @Component({
-  selector: 'app-patrocinadores',
-  templateUrl: './patrocinadores.page.html',
-  styleUrls: ['./patrocinadores.page.scss'],
+  selector: 'app-empleados',
+  templateUrl: './empleados.page.html',
+  styleUrls: ['./empleados.page.scss'],
 })
-export class PatrocinadoresPage implements OnInit {
+export class EmpleadosPage implements OnInit {
 
-  patrocinadores: Patrocinador[];
+  empleados: Empleado[];
   posicion: string;
   alineacion: Alineacion;
 
 
   constructor(
-    private _patrocinadorService: PatrocinadoresService,
+    private _empleadoService: EmpleadosService,
     private _alineacionService: AlineacionService,
     private activatedroute: ActivatedRoute,
     public router: Router
   ) { 
+
+    
     
     
   }
@@ -32,36 +34,34 @@ export class PatrocinadoresPage implements OnInit {
       const newLocal = "posicion";
       
       this.posicion = paramMap.get(newLocal);
-      
       this.alineacion = this._alineacionService.alineacion;
-      this.patrocinadores = this._patrocinadorService.patrocinadores.filter(data => {
-        
+      
+      this.empleados = this._empleadoService.empleados.filter(data => {
         return data[this.posicion] == 1;
       });
-      
       
     });
   }
 
-  public patrocinadorSeleccionado(id: string, posicion: string) {
-    let patrocinador = this.patrocinadores.filter(data => {
+  public empleadoSeleccionado(id: string, posicion: string) {
+    let empleado = this.empleados.filter(data => {
       return data["id"] == parseInt(id);
     });
-
-    this._alineacionService.guardarPatrocinadorPosicion(
-      patrocinador[0],
+    this._alineacionService.guardarEmpleadoPosicion(
+      empleado[0],
       posicion
     );
 
     this.router.navigateByUrl("/club");
   }
 
-  removePatrocinador(posicion: string) {
-    
-    this._alineacionService.eliminarPatrocinador(posicion);
+  removeEmpleado(posicion: string) {
+    this._alineacionService.eliminarEmpleado(posicion);
 
     this.router.navigateByUrl("/club");
   }
 
-
 }
+
+
+

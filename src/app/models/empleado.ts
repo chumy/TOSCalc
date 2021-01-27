@@ -1,11 +1,13 @@
-export class Patrocinador {
+export class Empleado {
+
   nombre: string;
   id: number;
   mazo: string;
   sueldo: number;
-  VALLA: number;
-  TV: number;
-
+  tipo: string;
+  OJEADOR: number;
+  AGENTE: number;
+  CM: number;
 
 
   constructor() {
@@ -13,9 +15,9 @@ export class Patrocinador {
     this.id = null;
     this.mazo = "";
     this.sueldo = 0;
-    this.VALLA = 0;
-    this.TV = 0;
-
+    this.OJEADOR = 0;
+    this.AGENTE = 0;
+    this.CM = 0;
   }
 
 }

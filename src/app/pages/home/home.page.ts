@@ -8,6 +8,8 @@ import { Entrenador } from "src/app/models/entrenador";
 import { EntrenadoresService } from "src/app/services/entrenadores.service";
 import { Location } from "@angular/common";
 import { Plugins } from '@capacitor/core';
+import { Empleado } from "src/app/models/empleado";
+import { EmpleadosService } from "src/app/services/empleados.service";
 const { App } = Plugins;
 
 @Component({
@@ -22,6 +24,7 @@ export class HomePage implements OnInit {
   entrenadores: Entrenador[];
   isData: boolean = false;
   subscribe: any;
+  empleados: Empleado[];
 
  
 
@@ -29,6 +32,7 @@ export class HomePage implements OnInit {
     private _alineacionService: AlineacionService,
     private _jugadorService: JugadoresService,
     private _entreandorService: EntrenadoresService,
+    private _empleadoService: EmpleadosService,
     public navCtrl: NavController,
     public platform: Platform,
     private _location: Location
@@ -37,6 +41,9 @@ export class HomePage implements OnInit {
     this.jugadoresPage = JugadoresPage;
     this.entrenadores = _entreandorService.entrenadores;
     this.jugadores = _jugadorService.jugadores;
+    this.empleados = _empleadoService.empleados;
+    
+    
     this.subscribe = this.platform.backButton.subscribeWithPriority(
       666666,
       () => {
@@ -57,7 +64,15 @@ export class HomePage implements OnInit {
 
   async ngOnInit() {
     this.alineacion = this._alineacionService.alineacion;
-    this.isData = true;
+
+
+    this._empleadoService.getEmpleados().subscribe(data => {
+      this.isData = true;
+      this.setEmpleadosIniciales();
+      return data;
+      });
+    
+    
   }
 
   public getImgJugador(posicion: string): string {
@@ -81,6 +96,22 @@ export class HomePage implements OnInit {
       : "assets/images/bench.jpg";
   }
 
+  setEmpleadosIniciales() {
+    let entrenador = this._entreandorService.getEntrenador(901);
+    this.alineacion['COACH1'] = entrenador;
+
+    let empleado = this._empleadoService.getEmpleado(800);
+    this.alineacion['AGENTE'] = empleado;
+    empleado = this._empleadoService.getEmpleado(700);
+    this.alineacion['OJEADOR'] = empleado;
+    empleado = this._empleadoService.getEmpleado(600);
+    this.alineacion['CM'] = empleado;
+
+    this._alineacionService.actualizarGanancias();
+    
+    
+
+  }
 
 
  
