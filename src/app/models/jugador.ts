@@ -32,7 +32,7 @@ export class Jugador {
     this.nombre = null;
     this.id = null;
     this.mazo = "";
-    this.sueldo = -2;
+    this.sueldo = 0;
     this.precio = 0;
     this.pase = 0;
     this.tiro = 0;

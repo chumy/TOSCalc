@@ -32,6 +32,49 @@
   flex-direction: column;
 }
 
+.resumen {
+  background-color: #fcdea6;
+}
+
+.casilla {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-bottom: 1em;
+  //height: auto;
+  //width: 15vw;
+  align-content: center;
+  padding-top: 1vh;
+}
+
+.casilla img {
+  width: 20vw;
+}
+
+.casilla p {
+  margin: 0;
+  font-size: calc(0.8em + 0.5vw);
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.campoImpar {
+  background: #7aad47;
+}
+.campo {
+  background: #669933;
+}
+
+.color_entrenador {
+  background: #9dd3ff !important;
+}
+
+.color_banquillo {
+  background: #3b7eb6 !important;
+}
+
 button {
   word-wrap: break-word;
 }
@@ -61,14 +104,6 @@ ion-card {
   height: 10vh;
   padding-top: 1vh;
   background: #fcdea6;
-}
-
-.color_entrenador {
-  background: #9dd3ff !important;
-}
-
-.color_banquillo {
-  background: #3b7eb6 !important;
 }
 
 .jugador {

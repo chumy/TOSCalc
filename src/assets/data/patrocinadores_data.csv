@@ -1,17 +1,17 @@
 id,nombre,mazo,sueldo,tipo,VALLA,TV
-501,Mi juego del mes,MAZO1,1,TV,0,1
+501,Mi juego del Mes,MAZO1,1,TV,0,1
 502,Analisis Paralisis,MAZO1,1,TV,0,1
-401,Juegos de la Mesa redonda,MAZO1,1,VALLA,1,0
+401,Juegos de la Mesa Redonda,MAZO1,1,VALLA,1,0
 402,Zacatrus!,MAZO1,1,VALLA,1,0
 503,Frikiguias,MAZO2,2,TV,0,1
 504,El Tablero,MAZO2,2,TV,0,1
-403,Juegamostore,MAZO2,2,VALLA,1,0
-404,Elite games,MAZO2,2,VALLA,1,0
-505,Dias de juego,MAZO3,2,TV,0,1
+403,Juegamestore,MAZO2,2,VALLA,1,0
+404,Elite Games,MAZO2,2,VALLA,1,0
+505,Dias de Juego,MAZO3,2,TV,0,1
 506,Vis ludica,MAZO3,3,TV,0,1
 405,Dracotienda,MAZO3,2,VALLA,1,0
-406,Elite games,MAZO3,3,VALLA,1,0
-507,5 mpj,MAZO4,4,TV,0,1
+406,Elite Games,MAZO3,3,VALLA,1,0
+507,5 MPJ,MAZO4,4,TV,0,1
 508,The Dice Tower,MAZO4,4,TV,0,1
 407,MagTv,MAZO4,4,VALLA,1,0
-408,Planeton games,MAZO4,4,VALLA,1,0
+408,Planeton Games,MAZO4,4,VALLA,1,0

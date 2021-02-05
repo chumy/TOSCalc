@@ -220,63 +220,64 @@ export class AlineacionService {
 
     switch (posicion) {
       case "DELANTERO_IZQUIERDO":
+        
         aux = jugador.tiro;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (jugador.habArriba === "TIRO") puntos += 2;
+
+        if (this.alineacion["EXTREMO_IZQUIERDO"].habDerecha === jugador.habIzquierda  && jugador.habIzquierda !== "NONE") {
+          puntos += (jugador.habIzquierda === "CENTRO") ? 3 : 1;
+        }
         if (
-          this.alineacion["EXTREMO_IZQUIERDO"].habDerecha ===
-            jugador.habIzquierda &&
-          jugador.habIzquierda === "CENTRO"
-        )
-          puntos += 3;
-        if (
-          this.alineacion["DELANTERO_DERECHO"].habIzquierda ===
-          jugador.habDerecha
+          this.alineacion["DELANTERO_DERECHO"].habIzquierda === jugador.habDerecha  && jugador.habIzquierda !== "NONE"
         )
           puntos += 1;
+        if (this.alineacion["CENTRO_IZQUIERDO"].habArriba === jugador.habAbajo && jugador.habAbajo !== "NONE")
+        {
+          console.log(jugador);
+          puntos += (jugador.habAbajo === "PASE") ? 3: 1;
+          console.log(puntos);
+        }
         break;
       case "DELANTERO_DERECHO":
         aux = jugador.tiro;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (jugador.habArriba === "TIRO") puntos += 2;
-        if (
-          this.alineacion["EXTREMO_DERECHO"].habIzquierda ===
-            jugador.habDerecha &&
-          jugador.habDerecha === "CENTRO"
-        )
-          puntos += 3;
-        if (
-          this.alineacion["DELANTERO_IZQUIERDO"].habDerecha ===
-            jugador.habIzquierda &&
-          jugador.habIzquierda !== "NONE"
-        )
+        //Simbolos iguales +1
+        if (this.alineacion["DELANTERO_IZQUIERDO"].habDerecha === jugador.habIzquierda  && jugador.habIzquierda !== "NONE" ) {
           puntos += 1;
+        }
+          
+        if (this.alineacion["EXTREMO_DERECHO"].habIzquierda === jugador.habDerecha  && jugador.habDerecha !== "NONE")
+        {
+          puntos += (jugador.habDerecha === "CENTRO") ? 3  : 1;
+        }
 
+        if (this.alineacion["CENTRO_DERECHO"].habArriba=== jugador.habAbajo && jugador.habAbajo !== "NONE")
+        {
+          puntos += (jugador.habAbajo === "PASE") ? 3 : 1;
+        }
         break;
 
       case "EXTREMO_IZQUIERDO":
         aux = tipo === "ATAQUE" ? jugador.centrarIzq : jugador.defensaIzq;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
+        if (this.alineacion["LATERAL_IZQUIERDO"].habArriba === jugador.habAbajo && jugador.habAbajo !== "NONE") {     
+          puntos += ( jugador.habAbajo === "PASE") ? 3:1;
+        }
         if (
-          this.alineacion["LATERAL_IZQUIERDO"].habArriba === jugador.habAbajo &&
-          jugador.habAbajo === "PASE"
-        )
-          puntos += 3;
-        if (
-          this.alineacion["CENTRO_IZQUIERDO"].habIzquierda ===
-            jugador.habDerecha &&
-          jugador.habDerecha !== "NONE"
+          this.alineacion["CENTRO_IZQUIERDO"].habIzquierda === jugador.habDerecha && jugador.habDerecha !== "NONE"
         )
           puntos += 1;
         if (
           this.alineacion["DELANTERO_IZQUIERDO"].habIzquierda ===
-            jugador.habDerecha &&
-          jugador.habDerecha === "CENTRO"
+            jugador.habDerecha && jugador.habDerecha !== "NONE"
         )
-          puntos += 3;
+          puntos += (jugador.habDerecha === "CENTRO" ) ? 3 : 1;
         break;
 
       case "CENTRO_IZQUIERDO":
+        
         aux = tipo === "ATAQUE" ? jugador.pase : jugador.entradas;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (
@@ -285,24 +286,25 @@ export class AlineacionService {
         )
           puntos += 1;
         if (
-          this.alineacion["EXTREMO_IZQUIERDO"].habDerecha ===
-            jugador.habIzquierda &&
+          this.alineacion["EXTREMO_IZQUIERDO"].habDerecha === jugador.habIzquierda &&
           jugador.habIzquierda !== "NONE"
         )
           puntos += 1;
         if (
-          this.alineacion["CENTRO_DERECHO"].habIzquierda ===
-            jugador.habDerecha &&
+          this.alineacion["CENTRO_DERECHO"].habIzquierda === jugador.habDerecha &&
           jugador.habDerecha !== "NONE"
         )
           puntos += 1;
 
         if (
-          this.alineacion["DELANTERO_IZQUIERDO"].habAbajo ===
-            jugador.habArriba &&
+          this.alineacion["DELANTERO_IZQUIERDO"].habAbajo ===  jugador.habArriba &&
           jugador.habArriba !== "NONE"
-        )
-          puntos += 3;
+        ) {
+          console.log(jugador);
+          puntos += (jugador.habArriba === "PASE") ? 3: 1;
+          console.log(puntos);
+        }
+          
         break;
       case "CENTRO_DERECHO":
         aux = tipo === "ATAQUE" ? jugador.pase : jugador.entradas;
@@ -328,17 +330,20 @@ export class AlineacionService {
         if (
           this.alineacion["DELANTERO_DERECHO"].habAbajo === jugador.habArriba &&
           jugador.habArriba !== "NONE"
-        )
-          puntos += 3;
+        ) {
+          puntos += (jugador.habArriba === "PASE") ? 3: 1;
+       
+        }
         break;
       case "EXTREMO_DERECHO":
         aux = tipo === "ATAQUE" ? jugador.centrarDcha : jugador.defensaDcha;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (
-          this.alineacion["LATERAL_DERECHO"].habArriba === jugador.habAbajo &&
-          jugador.habAbajo === "PASE"
-        )
-          puntos += 3;
+          this.alineacion["LATERAL_DERECHO"].habArriba === jugador.habAbajo  &&
+          jugador.habAbajo !== "NONE"
+        ) {
+          puntos += ( jugador.habAbajo === "PASE") ? 3:1;
+        }
         if (
           this.alineacion["CENTRO_DERECHO"].habDerecha ===
             jugador.habIzquierda &&
@@ -348,29 +353,29 @@ export class AlineacionService {
         if (
           this.alineacion["DELANTERO_DERECHO"].habDerecha ===
             jugador.habIzquierda &&
-          jugador.habIzquierda === "CENTRO"
+          jugador.habIzquierda !== "NONE"
         )
-          puntos += 3;
+          puntos += ( jugador.habIzquierda === "CENTRO") ? 3 :1;
         break;
       case "LATERAL_IZQUIERDO":
         aux = tipo === "ATAQUE" ? jugador.centrarIzq : jugador.defensaIzq;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
         if (
           this.alineacion["EXTREMO_IZQUIERDO"].habAbajo === jugador.habArriba &&
-          jugador.habArriba === "PASE"
+          jugador.habArriba !== "NONE"
         )
-          puntos += 3;
+          puntos += ( jugador.habArriba === "PASE") ? 3 :1;
         if (
           this.alineacion["DEFENSA_IZQUIERDO"].habIzquierda ===
             jugador.habDerecha &&
           jugador.habDerecha !== "NONE"
         )
-          puntos += 1;
-        if (jugador.habIzquierda === "ENTRADAS") puntos += 2;
+          puntos += ( jugador.habIzquierda === "ENTRADAS") ? 3:1;
         break;
       case "DEFENSA_IZQUIERDO":
         aux = tipo === "ATAQUE" ? jugador.pase : jugador.entradas;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
+        if (jugador.habAbajo === "ENTRADAS") puntos += 2;
         if (
           this.alineacion["CENTRO_IZQUIERDO"].habAbajo === jugador.habArriba &&
           jugador.habArriba !== "NONE"
@@ -388,11 +393,12 @@ export class AlineacionService {
           jugador.habIzquierda !== "NONE"
         )
           puntos += 1;
-        if (jugador.habAbajo === "ENTRADAS") puntos += 2;
+        
         break;
       case "DEFENSA_DERECHO":
         aux = tipo === "ATAQUE" ? jugador.pase : jugador.entradas;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
+        if (jugador.habAbajo === "ENTRADAS") puntos += 2;
         if (
           this.alineacion["CENTRO_DERECHO"].habAbajo === jugador.habArriba &&
           jugador.habArriba !== "NONE"
@@ -406,31 +412,33 @@ export class AlineacionService {
           puntos += 1;
         if (
           this.alineacion["LATERAL_DERECHO"].habIzquierda ===
-            jugador.habDerecha &&
+          jugador.habDerecha &&
           jugador.habDerecha !== "NONE"
         )
           puntos += 1;
-        if (jugador.habAbajo === "ENTRADAS") puntos += 2;
+        
         break;
       case "LATERAL_DERECHO":
         aux = tipo === "ATAQUE" ? jugador.centrarDcha : jugador.defensaDcha;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
+        if (jugador.habDerecha === "ENTRADAS") puntos += 2;
         if (
           this.alineacion["EXTREMO_DERECHO"].habAbajo === jugador.habArriba &&
-          jugador.habArriba === "PASE"
+          jugador.habArriba !== "NONE"
         )
-          puntos += 3;
+          puntos += ( jugador.habArriba === "PASE") ? 3 :1;
         if (
           this.alineacion["DEFENSA_DERECHO"].habDerecha ===
             jugador.habIzquierda &&
           jugador.habIzquierda !== "NONE"
         )
           puntos += 1;
-        if (jugador.habDerecha === "ENTRADAS") puntos += 2;
+        
         break;
       case "DEFENSA_DERECHO":
         aux = tipo === "ATAQUE" ? jugador.pase : jugador.entradas;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
+        if (jugador.habAbajo === "ENTRADAS") puntos += 2;
         if (
           this.alineacion["CENTRO_DERECHO"].habAbajo === jugador.habArriba &&
           jugador.habArriba !== "NONE"
@@ -448,7 +456,7 @@ export class AlineacionService {
           jugador.habDerecha !== "NONE"
         )
           puntos += 1;
-        if (jugador.habAbajo === "ENTRADAS") puntos += 2;
+        
         break;
       case "PORTERO":
         //debugger;

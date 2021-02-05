@@ -14,7 +14,6 @@ import { PatrocinadoresService } from 'src/app/services/patrocinadores.service';
 })
 export class ClubPage implements OnInit {
 
-  aficion: number;
   posicion: string;
   alineacion: Alineacion;
   empleados: Empleado[];
@@ -34,9 +33,6 @@ export class ClubPage implements OnInit {
     this.empleados = this._empleadoService.empleados;
     this.patrocinadores = this._patrocinadorService.patrocinadores;
     this.alineacion = this._alineacionService.alineacion;
-    this.aficion = 13;
-    
-
     
   }
 
@@ -55,7 +51,7 @@ export class ClubPage implements OnInit {
   }
      
   
-  setAficion(valor) {
-    this._alineacionService.setAficion(valor.upper);
+  public updateAficion() {
+    this._alineacionService.actualizarGanancias();
   }
 }
