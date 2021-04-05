@@ -51,11 +51,11 @@ export class AlineacionService {
   }
 
   cargarAlineacion() {
-    if (localStorage.getItem("alineacion")) {
+    /*if (localStorage.getItem("alineacion")) {
       this.alineacion = JSON.parse(localStorage.getItem("alineacion"));
-    } else {
+    } else {*/
       this.alineacion = new Alineacion();
-    }
+    //
   }
 
   guardarAlineacion() {
@@ -360,6 +360,9 @@ export class AlineacionService {
       case "LATERAL_IZQUIERDO":
         aux = tipo === "ATAQUE" ? jugador.centrarIzq : jugador.defensaIzq;
         if (parseInt(aux) > 0) puntos = parseInt(aux);
+        console.log(aux);
+        if (jugador.habIzquierda === "ENTRADAS") puntos += 2;
+        console.log(puntos);
         if (
           this.alineacion["EXTREMO_IZQUIERDO"].habAbajo === jugador.habArriba &&
           jugador.habArriba !== "NONE"
@@ -559,4 +562,6 @@ export class AlineacionService {
     this.alineacion[posicion] = empleado;
     this.actualizarGanancias();
   }
+
+  
 }

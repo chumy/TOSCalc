@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" menu="primerMenu">
+
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>TOS Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+
+  <ion-list>
+    <ion-item><h1>Mods Disponibles</h1></ion-item>
+    <ion-item *ngFor="let archivo of ficheros">
+  
+     
+        <h3 (click)="changeFile(archivo.file)" *ngIf="alineacion.mod== archivo.file" style="color: blue;">{{archivo.name}}</h3>
+        <h3 (click)="changeFile(archivo.file)" *ngIf="alineacion.mod!= archivo.file" style="color:gray;">{{archivo.name}}</h3>
+        </ion-item>
+
+      
+  </ion-list>
+
+
+
+
+
+  
+
+
+
+</ion-content>

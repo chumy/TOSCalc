@@ -104,6 +104,10 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: 'mods',
+    loadChildren: () => import('./pages/mods/mods.module').then( m => m.ModsPageModule)
+  },
 ];
 
 @NgModule({

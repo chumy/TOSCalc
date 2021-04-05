@@ -32,6 +32,7 @@ export class Alineacion {
   CM: Empleado;
   TV: Patrocinador;
   VALLA: Patrocinador;
+  mod: String; //Fichero de datos
 
 
   constructor() {
@@ -64,6 +65,7 @@ export class Alineacion {
     this.CM = new Empleado();
     this.VALLA = new Patrocinador();
     this.TV = new Patrocinador();
+    this.mod = "TOS"
   }
 
   getEntrenador(id: string): Entrenador {

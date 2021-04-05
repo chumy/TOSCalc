@@ -3,34 +3,26 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Jugador } from "../models/jugador";
-import { Entrenador } from "../models/entrenador";
 
 @Injectable({
   providedIn: "root"
 })
 export class JugadoresService {
   public jugadores: Jugador[];
+  public ficheros: string[];
 
   constructor(private http: HttpClient) {
-    this.getJugadores().subscribe(data => {
+    this.ficheros=['TOS', 'Campeones']
+  /* this.getJugadores('TOS').subscribe(data => {
       this.jugadores = data;
-    });
+    });*/
   }
 
-  /*   public getJugadores(): Promise<any> {
+  
+  public loadJugadores(file: string): Observable<Jugador[]> {
+    //console.log("Recibido" + file)
     return this.http
-      .get("./assets/data/player_data_New.csv", {
-        responseType: "text"
-      })
-      .toPromise()
-      .then(function(res) {
-        return this.CSV2JSON(res);
-      });
-  }
- */
-  public getJugadores(): Observable<Jugador[]> {
-    return this.http
-      .get("./assets/data/player_data_New.csv", {
+      .get("./assets/data/player_data_" + file +".csv", {
         responseType: "text"
       })
       .pipe(
@@ -105,5 +97,26 @@ export class JugadoresService {
     return this.jugadores.filter(data => {
       return data[posicion] == 1;
     });
+  }
+
+  setNewFile(file) {
+    
+    this.loadJugadores(file).subscribe(data => {
+      this.jugadores = data;
+      //console.log(data);
+    });
+
+  }
+
+  getJugadorById(id: number) {
+    let jugadorSel = new Jugador();
+    
+    this.jugadores.filter(data => {
+      if (data['id'] == id) {
+        jugadorSel = data;
+      }
+
+    });
+    return jugadorSel;
   }
 }

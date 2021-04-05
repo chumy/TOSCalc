@@ -25,6 +25,9 @@ export class HomePage implements OnInit {
   isData: boolean = false;
   subscribe: any;
   empleados: Empleado[];
+  coleccion: number;
+  ficheros: string[];
+  
 
  
 
@@ -40,10 +43,13 @@ export class HomePage implements OnInit {
     this.alineacion = _alineacionService.alineacion;
     this.jugadoresPage = JugadoresPage;
     this.entrenadores = _entreandorService.entrenadores;
-    this.jugadores = _jugadorService.jugadores;
     this.empleados = _empleadoService.empleados;
-    
-    
+    ///this.jugadores = _jugadorService.getJugadores(this.alineacion.mod);
+    /*_jugadorService.getJugadores(this.alineacion.mod).subscribe(data => {
+      this.jugadores = data;
+      console.log("recibiendo " +data)
+    });*/
+     _jugadorService.setNewFile(this.alineacion.mod);
     this.subscribe = this.platform.backButton.subscribeWithPriority(
       666666,
       () => {
@@ -64,7 +70,7 @@ export class HomePage implements OnInit {
 
   async ngOnInit() {
     this.alineacion = this._alineacionService.alineacion;
-
+    this.jugadores = this._jugadorService.jugadores;
 
     this._empleadoService.getEmpleados().subscribe(data => {
       this.isData = true;
