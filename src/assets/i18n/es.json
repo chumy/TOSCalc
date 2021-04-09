@@ -1,0 +1,21 @@
+{
+  
+    "DELANTERO_IZQUIERDO" : "Delantero Izquierdo",
+    "DELANTERO_DERECHO" : "Delantero Derecho",
+    "EXTREMO_IZQUIERDO" : "Extremo Izquierdo",
+    "CENTRO_IZQUIERDO" : "Centro Izquierdo",
+    "CENTRO_DERECHO" : "Centro Derecho",
+    "EXTREMO_DERECHO" : "Extremo Derecho",
+    "LATERAL_IZQUIERDO" : "Lateral Izquierdo",
+    "DEFENSA_IZQUIERDO" : "Defensa Izquierdo",
+    "DEFENSA_DERECHO" : "Defensa Derecho",
+    "LATERAL_DERECHO" : "Lateral Derecho",
+    "PORTERO" : "Portero",
+    "COACH1" : "Entrenador Prinicipal",
+    "COACH2" : "Segundo Entrenador",
+    "COACH3" : "Tercer Entrenador",
+    "VALLA" : "Valla Publicitaria",
+    "CM" : "Community Manager",
+    "OJEADOR" : "Ojeador",
+    "TV" : "Televisión"
+}

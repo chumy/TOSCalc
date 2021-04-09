@@ -82,7 +82,8 @@ export class EntrenadoresService {
 
   public getEntrenador(id: number) {
     
-   let entrenador = this.entrenadores.filter(data => {
+    let entrenador = this.entrenadores.filter(data => {
+      //console.log(data);
       return data["id"] == id;
    });
     

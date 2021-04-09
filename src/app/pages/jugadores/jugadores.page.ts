@@ -6,11 +6,16 @@ import { AlineacionService } from "src/app/services/alineacion.service";
 import { Jugador } from "src/app/models/jugador";
 import { Alineacion } from "src/app/models/alineacion";
 
+
+
+
+
 @Component({
   selector: "app-jugadores",
   templateUrl: "./jugadores.page.html",
-  styleUrls: ["./jugadores.page.scss"]
+  styleUrls: ["./jugadores.page.scss"],
 })
+  
 export class JugadoresPage implements OnInit {
   jugadores: Jugador[];
   posicion: string;
@@ -24,6 +29,7 @@ export class JugadoresPage implements OnInit {
   ) {}
 
   async ngOnInit() {
+    
     this.activatedroute.paramMap.subscribe(paramMap => {
       const newLocal = "posicion";
       this.posicion = paramMap.get(newLocal);
@@ -33,6 +39,9 @@ export class JugadoresPage implements OnInit {
         return data[this.posicion] == 1;
       });
     });
+
+   
+
   }
 
   jugadorSeleccionado(id: string) {

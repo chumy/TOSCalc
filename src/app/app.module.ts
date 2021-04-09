@@ -8,10 +8,21 @@ import { StatusBar } from "@ionic-native/status-bar/ngx";
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpClientModule} from "@angular/common/http";
 import { ImgJugadorPipe } from './pipes/img-jugador.pipe';
 import { MenuComponent } from "./components/menu/menu.component";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+
+
+/*export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}*/
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [AppComponent, ImgJugadorPipe, MenuComponent],
@@ -21,7 +32,13 @@ import { MenuComponent } from "./components/menu/menu.component";
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [
     StatusBar,
@@ -30,4 +47,6 @@ import { MenuComponent } from "./components/menu/menu.component";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+  
+export class AppModule { }
+
