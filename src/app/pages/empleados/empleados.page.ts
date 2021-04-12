@@ -52,13 +52,13 @@ export class EmpleadosPage implements OnInit {
       posicion
     );
 
-    this.router.navigateByUrl("/club");
+    this.router.navigateByUrl("/home");
   }
 
   removeEmpleado(posicion: string) {
     this._alineacionService.eliminarEmpleado(posicion);
 
-    this.router.navigateByUrl("/club");
+    this.router.navigateByUrl("/home");
   }
 
 }

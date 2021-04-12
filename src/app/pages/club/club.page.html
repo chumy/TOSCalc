@@ -53,20 +53,25 @@
   <ion-row class="club">
     <ion-col size="3"></ion-col>
     <ion-col size="3" class="casilla">
+    
+      <img [src]="getImgPatrocinador('TV')" [routerLink]="['/patrocinadores','TV']" />
+      <p>{{alineacion['TV'].nombre}}</p>
+    </ion-col>
+    <ion-col size="3" class="casilla">
       
         <img [src]="getImgPatrocinador('VALLA')" [routerLink]="['/patrocinadores','VALLA']"/>
         <p>{{alineacion['VALLA'].nombre}}</p>
       
     </ion-col>
-    <ion-col size="3" class="casilla">
-      
-      <img [src]="getImgPatrocinador('TV')" [routerLink]="['/patrocinadores','TV']" />
-      <p>{{alineacion['TV'].nombre}}</p>
-  </ion-col>
+    
     <ion-col size="3"></ion-col>
   </ion-row>
   <ion-row>
     <ion-col size="1" class="casilla"></ion-col>
+    <ion-col size="3" class="casilla">
+      <img [src]="getImgEmpleado('CM')" [routerLink]="['/empleados','CM']" />
+      <p>{{alineacion['CM'].nombre}}</p>
+    </ion-col>
     <ion-col size="3" class="casilla">
   <img [src]="getImgEmpleado('AGENTE')" [routerLink]="['/empleados','AGENTE']" />
   <p>{{alineacion['AGENTE'].nombre}}</p>
@@ -75,10 +80,7 @@
   <img [src]="getImgEmpleado('OJEADOR')" [routerLink]="['/empleados','OJEADOR']" />
   <p>{{alineacion['OJEADOR'].nombre}}</p>
 </ion-col>
-<ion-col size="3" class="casilla">
-  <img [src]="getImgEmpleado('CM')" [routerLink]="['/empleados','CM']" />
-  <p>{{alineacion['CM'].nombre}}</p>
-</ion-col>
+
 <ion-col size="1" class="casilla"></ion-col>
 </ion-row>
 </ion-grid>

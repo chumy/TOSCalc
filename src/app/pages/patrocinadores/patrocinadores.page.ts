@@ -53,14 +53,14 @@ export class PatrocinadoresPage implements OnInit {
       posicion
     );
 
-    this.router.navigateByUrl("/club");
+    this.router.navigateByUrl("/home");
   }
 
   removePatrocinador(posicion: string) {
     
     this._alineacionService.eliminarPatrocinador(posicion);
 
-    this.router.navigateByUrl("/club");
+    this.router.navigateByUrl("/home");
   }
 
 

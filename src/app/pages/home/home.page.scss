@@ -12,7 +12,7 @@
   font-size: 20px;
   line-height: 26px;
 }
-
+/*
 #container p {
   font-size: 16px;
   line-height: 22px;
@@ -20,7 +20,7 @@
   color: #cfcfcf;
 
   margin: 0;
-}
+}*/
 
 #container a {
   text-decoration: none;
@@ -41,8 +41,6 @@
   flex-direction: column;
   box-sizing: border-box;
   padding-bottom: 1em;
-  //height: auto;
-  //width: 15vw;
   align-content: center;
   padding-top: 1vh;
 }
@@ -83,27 +81,27 @@ ion-card {
   width: 20%;
 }
 
+ion-grid {
+  padding: 0 0 0 0;
+}
+
+ion-col {
+  padding-top: 0 0 0 0;
+}
+
 .fila {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: auto;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 2vh;
+  //height: auto;
+  // padding-left: 5vw;
+  // padding-right: 5vw;
+  //padding-top: 2vh;
 }
 
-.fila:nth-child(even) {
-  background: #7aad47;
-}
-.fila:nth-child(odd) {
-  background: #669933;
-}
-
-.fila:first-child {
-  height: 10vh;
-  padding-top: 1vh;
-  background: #fcdea6;
+.fila ion-col {
+  text-align: center;
+  vertical-align: middle;
 }
 
 .jugador {
@@ -129,14 +127,22 @@ ion-card {
   text-overflow: ellipsis;
 }
 
-.marcador {
-  size: 100px;
-  flex: 1;
-  font-size: larger;
-  align-content: center;
+.resumen {
+  background-color: #fcdea6;
 }
 
-.marcador p {
-  text-align: center;
-  vertical-align: middle;
+.clubBorde {
+  background-color: #7259ff;
+}
+
+.club {
+  background-color: #8c79f8;
+}
+
+ion-item {
+  padding: 0 0 0 0;
+}
+
+.aficion ion-range {
+  height: 10vh;
 }
