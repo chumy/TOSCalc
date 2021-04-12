@@ -12,25 +12,33 @@
 
     <ion-grid class="resumen" >
       <ion-row class="fila" >
-        <ion-col>
+        <ion-col size="2" >
+          
           <ion-icon name="football" style="zoom:2.0;" color="warning"></ion-icon> 
-            <b >
+        </ion-col>
+        <ion-col size="2">
+           <p > <b >
               {{alineacion.ATAQUE}}
-            </b>
+            </b></p>
+            
         </ion-col>
-        <ion-col size="4">
+        <ion-col size="2">
           <ion-icon name="shield" style="zoom:2.0;" color="primary"></ion-icon>
-          <b>
+          </ion-col>
+          <ion-col size="2">
+            <p> <b>
             {{alineacion.DEFENSA}}
-          </b>
+          </b></p>
         </ion-col>
-        <ion-col size="4">
+        <ion-col size="2">
        
           <ion-icon name="cash-outline" style="zoom:2.0;" color="success"></ion-icon>
-          
+          </ion-col>
+          <ion-col size="2">
+            <p> 
           <b>
             {{alineacion.GANANCIAS}}
-          </b>
+          </b></p>
          
         </ion-col>
       </ion-row>
@@ -123,42 +131,40 @@
     </ion-col>
 </ion-row>
 <ion-row class="campoImpar">
-  <ion-col size="4" class="casilla"></ion-col>
-  <ion-col size="3" class="casilla">
+
+  <ion-col size="12" class="casilla center" >
     <img [src]="getImgJugador('PORTERO')" [routerLink]="['/jugadores','PORTERO']" />
     <p *ngIf="showNombre">
       {{(alineacion['PORTERO'].nombre) ? alineacion['PORTERO'].nombre :
       '&nbsp;' }}
     </p>
   </ion-col>
-  <ion-col size="4" class="casilla"></ion-col>
+
 </ion-row>
     </ion-grid> 
     <ion-grid class="color_entrenador">
       <ion-row>
-        <ion-col size="1" class="casilla"></ion-col>
-        <ion-col size="3" class="casilla">
+        <ion-col size="4" class="casilla center">
           <img [src]="getImgEntrenador('COACH1')" [routerLink]="['/entrenadores', 'COACH1']" />
           <p *ngIf="showNombre">
             {{ (alineacion['COACH1'].nombre) ? alineacion['COACH1'].nombre :
             '&nbsp;' }}
           </p>
         </ion-col>
-        <ion-col size="3" class="casilla">
+        <ion-col size="4" class="casilla center">
           <img [src]="getImgEntrenador('COACH2')" [routerLink]="['/entrenadores','COACH2']" />
           <p *ngIf="showNombre">
             {{(alineacion['COACH2'].nombre) ? alineacion['COACH2'].nombre :
             '&nbsp;' }}
           </p>
         </ion-col>
-        <ion-col size="3" class="casilla">
+        <ion-col size="4" class="casilla center">
           <img [src]="getImgEntrenador('COACH3')" [routerLink]="['/entrenadores','COACH3']" />
           <p *ngIf="showNombre">
             {{(alineacion['COACH3'].nombre) ? alineacion['COACH3'].nombre :
             '&nbsp;' }}
           </p>
         </ion-col>
-        <ion-col size="1" class="casilla"></ion-col>
       </ion-row>
 
       <ion-row class="color_banquillo">
@@ -237,21 +243,19 @@
   </ion-row>
 
   <ion-row>
-    <ion-col size="1" class="casilla"></ion-col>
-    <ion-col size="3" class="casilla">
+    <ion-col size="4" class="casilla center">
       <img [src]="getImgEmpleado('CM')" [routerLink]="['/empleados','CM']" />
-      <p>{{alineacion['CM'].nombre}}</p>
+      <p  *ngIf="nombre">{{alineacion['CM'].nombre}}</p>
     </ion-col>
-    <ion-col size="3" class="casilla">
+    <ion-col size="4" class="casilla center">
       <img [src]="getImgEmpleado('AGENTE')" [routerLink]="['/empleados','AGENTE']" />
-      <p>{{alineacion['AGENTE'].nombre}}</p>
+      <p  *ngIf="nombre">{{alineacion['AGENTE'].nombre}}</p>
     </ion-col>
-    <ion-col size="3" class="casilla">
+    <ion-col size="4" class="casilla center">
       <img [src]="getImgEmpleado('OJEADOR')" [routerLink]="['/empleados','OJEADOR']" />
-      <p>{{alineacion['OJEADOR'].nombre}}</p>
+      <p  *ngIf="nombre">{{alineacion['OJEADOR'].nombre}}</p>
     </ion-col>
 
-    <ion-col size="1" class="casilla"></ion-col>
   </ion-row>
 </ion-grid>
    

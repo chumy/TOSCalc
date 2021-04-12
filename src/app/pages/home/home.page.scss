@@ -146,3 +146,18 @@ ion-item {
 .aficion ion-range {
   height: 10vh;
 }
+
+.resumen p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.center img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  //width: 40%;
+}
