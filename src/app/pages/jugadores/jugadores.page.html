@@ -6,18 +6,26 @@
     <ion-title> {{  posicion | translate }}
 
     </ion-title>
+
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content>
+  <section>
+    <ion-button color="light" (click)="sort('nombre')">{{ 'NOMBRE' | translate}}</ion-button>
+    <ion-button color="light" (click)="sort('mazo')">{{ 'NIVEL' | translate}}</ion-button>
+  </section>
+  
   <ion-list>
     <ion-item *ngFor="let jugador of jugadores">
       <ion-avatar slot="start" (click)="jugadorSeleccionado(jugador.id)">
-        <img src="assets/images/jugadores/{{jugador.id}}.jpg" />
+        <img src="assets/images/jugadores/{{this.alineacion.mod}}/{{jugador.id}}.jpg" />
       </ion-avatar>
 
       <ion-label (click)="jugadorSeleccionado(jugador.id)">
-        <h2>{{jugador.nombre}}</h2>
+        <h2>{{jugador.nombre | translate }}</h2>
         <p>{{jugador.mazo}}</p>
       </ion-label>
 <ion-icon *ngIf="alineacion[posicion].id === jugador.id" slot="end" name="repeat-outline"

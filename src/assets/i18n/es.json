@@ -19,5 +19,14 @@
     "OJEADOR" : "Ojeador",
     "TV" : "Televisión",
     "AFICION" : "Afición",
-    "BENCH" : "Banquillo"
+    "BENCH" : "Banquillo",
+    "NIVEL" : "Nivel",
+    "NOMBRE" : "Nombre",
+    "DORSAL" : "Dorsal",
+    "91" : "Portero Inicial",
+    "92" : "Lateral Inicial",
+    "93" : "Defensa Inicial",
+    "94" : "Extremo Inicial",
+    "95" : "Medio Inicial",
+    "96" : "Delantero Inicial"
 }

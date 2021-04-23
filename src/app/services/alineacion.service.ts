@@ -5,6 +5,7 @@ import { Entrenador } from "../models/entrenador";
 import { EmpleadosService } from "./empleados.service";
 import { Empleado } from "../models/empleado";
 import { Patrocinador } from "../models/patrocinador";
+import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 
 @Injectable({
   providedIn: "root"
@@ -234,9 +235,7 @@ export class AlineacionService {
           puntos += 1;
         if (this.alineacion["CENTRO_IZQUIERDO"].habArriba === jugador.habAbajo && jugador.habAbajo !== "NONE")
         {
-          console.log(jugador);
           puntos += (jugador.habAbajo === "PASE") ? 3: 1;
-          console.log(puntos);
         }
         
         break;
@@ -559,5 +558,27 @@ export class AlineacionService {
     this.actualizarGanancias();
   }
 
+  emptyAlineacion() {
+    
+
+    let listaBanquillos = ["BENCH1", "BENCH2", "BENCH3", "BENCH4", "BENCH5"];
+
+    listaBanquillos.forEach(posicion => {
+      this.alineacion[posicion] = new Jugador();
+    });
+
+    this.posicionesDefensaIniciales.forEach(posicion => {
+      this.alineacion[posicion] = new Jugador();
+    });
+
+    this.posicionesAtaqueIniciales.forEach(posicion => {
+      this.alineacion[posicion] = new Jugador();
+    });
+    this.actualizarValores();
+  }
+
+  setMod(fichero: string) {
+    this.alineacion.mod = fichero;
+  }
   
 }

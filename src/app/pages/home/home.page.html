@@ -52,7 +52,7 @@
         <ion-col size="3"></ion-col>
         <ion-col size="3" class="casilla">
           <img [src]="getImgJugador('DELANTERO_IZQUIERDO')" [routerLink]="['/jugadores','DELANTERO_IZQUIERDO']" />
-          <p *ngIf="nombre">
+          <p *ngIf="showNombre">
             {{ (alineacion['DELANTERO_IZQUIERDO'].nombre) ?
             alineacion['DELANTERO_IZQUIERDO'].nombre : '&nbsp;' }}
           </p>
@@ -210,19 +210,7 @@
 
     </ion-grid>
     
-    <ion-grid class="aficion">
-      <ion-row>
-        <ion-col>
-          <ion-item>
     
-            <ion-label>{{ 'AFICION' | translate }}</ion-label>
-            <ion-range pin min="10" max="20" step="1" snaps="true" color="warning" [(ngModel)]="alineacion['AFICION']"
-              (ionChange)="updateAficion()"></ion-range>
-            <ion-badge slot="end" color="warning">{{alineacion['AFICION']}}</ion-badge>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
 
 <ion-grid class="clubBorde">
   <ion-row class="club">
@@ -258,6 +246,18 @@
 
   </ion-row>
 </ion-grid>
-   
+  <ion-grid class="aficion">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+  
+          <ion-label>{{ 'AFICION' | translate }}</ion-label>
+          <ion-range pin min="10" max="20" step="1" snaps="true" color="warning" [(ngModel)]="alineacion['AFICION']"
+            (ionChange)="updateAficion()"></ion-range>
+          <ion-badge slot="end" color="warning">{{alineacion['AFICION']}}</ion-badge>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
 </ion-content>

@@ -49,7 +49,7 @@ export class JugadoresPage implements OnInit {
       return data["id"] == parseInt(id);
     });
     this._alineacionService.guardarJugadorPosicion(jugador[0], this.posicion);
-
+    //console.log(this.alineacion);
     this.router.navigateByUrl("/home");
   }
 
@@ -71,6 +71,12 @@ export class JugadoresPage implements OnInit {
     this._alineacionService.enviarJugadorBanquillo(jugador[0]);
 
     this.router.navigateByUrl("/home");
+  }
+
+  sort(term: string) {
+    
+    this.jugadores.sort((a, b) => (a[term] > b[term] ) ? 1 : (b[term]  > a[term] ) ? -1 : 0);
+    console.log(this.jugadores);
   }
 
 }

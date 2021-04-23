@@ -1,17 +1,17 @@
 id,nombre,mazo,sueldo,tipo,VALLA,TV
-501,Dias de Juego,MAZO1,1,TV,0,1
+501,Dias de Juego 1,MAZO1,1,TV,0,1
 502,Analisis Paralisis,MAZO1,1,TV,0,1
 401,Juegos de la Mesa Redonda,MAZO1,1,VALLA,1,0
 402,MaxGamer,MAZO1,1,VALLA,1,0
-503,MagTV,MAZO2,2,TV,0,1
+503,MagTV 2,MAZO2,2,TV,0,1
 504,El Tablero,MAZO2,2,TV,0,1
 403,MCC,MAZO2,2,VALLA,1,0
 404,Elite Games,MAZO2,2,VALLA,1,0
-505,Dias de Juego,MAZO3,2,TV,0,1
+505,Dias de Juego 3,MAZO3,2,TV,0,1
 506,Vis ludica,MAZO3,3,TV,0,1
 405,Dracotienda,MAZO3,2,VALLA,1,0
 406,Elite Games,MAZO3,3,VALLA,1,0
 507,ManagerLiga,MAZO4,4,TV,0,1
-508,MagTV,MAZO4,4,TV,0,1
+508,MagTV 4,MAZO4,4,TV,0,1
 407,La Comarca,MAZO4,4,VALLA,1,0
 408,Planeton Games,MAZO4,4,VALLA,1,0

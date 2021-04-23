@@ -18,8 +18,8 @@
     <ion-item *ngFor="let archivo of ficheros">
   
      
-        <h3 (click)="changeFile(archivo.file)" *ngIf="alineacion.mod== archivo.file" style="color: blue;">{{archivo.name}}</h3>
-        <h3 (click)="changeFile(archivo.file)" *ngIf="alineacion.mod!= archivo.file" style="color:gray;">{{archivo.name}}</h3>
+        <h3 (click)="changeFile(archivo.file)" *ngIf="alineacion.mod === archivo.file" style="color: blue;">{{archivo.name}}</h3>
+        <h3 (click)="changeFile(archivo.file)" *ngIf="alineacion.mod != archivo.file" style="color:gray;">{{archivo.name}}</h3>
         </ion-item>
 
       

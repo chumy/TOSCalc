@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>banquillo</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'BENCH' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +13,7 @@
     <ion-item >
       <ion-avatar slot="start">
         <img *ngIf="alineacion[posicion].isEntrenador" src="assets/images/entrenadores/{{alineacion[posicion].id}}.jpg" />
-        <img *ngIf="alineacion[posicion].isJugador" src="assets/images/jugadores/{{alineacion[posicion].id}}.jpg" />
+        <img *ngIf="alineacion[posicion].isJugador" src="assets/images/jugadores/{{alineacion.mod}}/{{alineacion[posicion].id}}.jpg" />
       </ion-avatar>
   
       <ion-label >
