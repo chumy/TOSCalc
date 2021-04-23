@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Alineacion } from 'src/app/models/alineacion';
 import { Empleado } from 'src/app/models/empleado';
 import { Patrocinador } from 'src/app/models/patrocinador';
@@ -22,17 +23,17 @@ export class ModsPage implements OnInit {
   constructor(
     private _alineacionService: AlineacionService,
     private _jugadorService: JugadoresService,
-
+private router: Router
 
   ) {
     this.ficheros = [{
       name: "Original",
       file: "TOS"
-    }/*,
+    },
       {
       name: "Campeones",
       file: "Campeones"
-    },*/
+    },
   ]
 
   }
@@ -46,9 +47,14 @@ export class ModsPage implements OnInit {
   }
 
   public changeFile(fichero: string) {
-    this._alineacionService.cargarAlineacion();
-    this.alineacion.mod = fichero;
-    this._jugadorService.setNewFile(this.alineacion.mod);
+    this._jugadorService.setNewFile(fichero);
+    this._alineacionService.emptyAlineacion();
+    //this._alineacionService.actualizarValores();
+    this._alineacionService.setMod(fichero);
+    //this._jugadorService.setNewFile(this.alineacion.mod);
+    //console.log(this._alineacionService.alineacion);
+    this.router.navigateByUrl("/home");
+    
     
   }
 

@@ -74,10 +74,16 @@ export class HomePage implements OnInit {
     
   }
 
+  ionViewWillEnter() {
+    this.alineacion = this._alineacionService.alineacion;
+    this.jugadores = this._jugadorService.jugadores;
+    }
+
   async ngOnInit() {
     this.alineacion = this._alineacionService.alineacion;
     this.jugadores = this._jugadorService.jugadores;
     this.showNombre = false;
+    //console.log(this.alineacion);
     this._empleadoService.getEmpleados().subscribe(data => {
       this.isData = true;
       this.setEmpleadosIniciales();
@@ -91,8 +97,10 @@ export class HomePage implements OnInit {
   }
 
   public getImgJugador(posicion: string): string {
+    
+    //console.log("assets/images/jugadores/" + this.alineacion.mod + "/" + this.alineacion[posicion].id + ".jpg");
     return this.alineacion[posicion].id
-      ? "assets/images/jugadores/" + this.alineacion[posicion].id + ".jpg"
+      ? "assets/images/jugadores/" + this.alineacion.mod + "/" + this.alineacion[posicion].id + ".jpg"
       : "assets/images/jugador_vacio.jpg";
   }
 
@@ -104,7 +112,7 @@ export class HomePage implements OnInit {
 
   public getImgBench(posicion: string): string {
     
-    let tipo = (!!this.alineacion[posicion].isEntrenador) ? 'entrenadores' : 'jugadores';
+    let tipo = (!!this.alineacion[posicion].isEntrenador) ? 'entrenadores' : 'jugadores/' + this.alineacion.mod;
 
     return this.alineacion[posicion].id
       ? "assets/images/" + tipo + "/" + this.alineacion[posicion].id + ".jpg"
