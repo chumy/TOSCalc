@@ -17,14 +17,15 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule,
+       TranslateModule.forChild({
+          loader: {
+           provide: TranslateLoader,
+            useFactory: createTranslateLoader,
+           deps: [HttpClient]
+         }
+       })],
   
-  TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: createTranslateLoader,
-        deps: [HttpClient]
-      }
-    })],
+  
   declarations: [HomePage]
 })
 export class HomePageModule {}

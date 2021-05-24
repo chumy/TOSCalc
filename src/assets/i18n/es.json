@@ -28,5 +28,10 @@
     "93" : "Defensa Inicial",
     "94" : "Extremo Inicial",
     "95" : "Medio Inicial",
-    "96" : "Delantero Inicial"
+    "96" : "Delantero Inicial",
+    "IDIOMA" : "Idioma",
+    "ITALIANO" : "Italiano",
+    "ESPANOL": "Español",
+    "ALINEACION" : "Alineación",
+    "MENU" : "Menu"
 }

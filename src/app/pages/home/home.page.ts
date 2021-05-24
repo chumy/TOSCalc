@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit , ViewChild} from "@angular/core";
 import { NavController, Platform } from "@ionic/angular";
 import { JugadoresPage } from "../jugadores/jugadores.page";
 import { AlineacionService } from "src/app/services/alineacion.service";
@@ -12,6 +12,13 @@ import { Empleado } from "src/app/models/empleado";
 import { EmpleadosService } from "src/app/services/empleados.service";
 import { PatrocinadoresService } from "src/app/services/patrocinadores.service";
 import { Patrocinador } from "src/app/models/patrocinador";
+import { TranslateService } from "@ngx-translate/core";
+
+import { IonSelect } from '@ionic/angular';
+
+
+
+
 const { App } = Plugins;
 
 @Component({
@@ -31,10 +38,11 @@ export class HomePage implements OnInit {
   coleccion: number;
   ficheros: string[];
   showNombre: boolean;
+  language: string = this.translateService.currentLang;
+
+
+  @ViewChild('mySelect') selectRef: IonSelect
   
-
- 
-
   constructor(
     private _alineacionService: AlineacionService,
     private _jugadorService: JugadoresService,
@@ -43,7 +51,8 @@ export class HomePage implements OnInit {
     private _patrocinadorService : PatrocinadoresService,
     public navCtrl: NavController,
     public platform: Platform,
-    private _location: Location
+    private _location: Location,
+    private translateService : TranslateService
   ) {
     this.alineacion = _alineacionService.alineacion;
     this.jugadoresPage = JugadoresPage;
@@ -55,6 +64,9 @@ export class HomePage implements OnInit {
       this.jugadores = data;
       console.log("recibiendo " +data)
     });*/
+
+   
+    
      _jugadorService.setNewFile(this.alineacion.mod);
     this.subscribe = this.platform.backButton.subscribeWithPriority(
       666666,
@@ -83,6 +95,9 @@ export class HomePage implements OnInit {
     this.alineacion = this._alineacionService.alineacion;
     this.jugadores = this._jugadorService.jugadores;
     this.showNombre = false;
+    /*this.globalization.getPreferredLanguage()
+  .then(res => console.log(res))
+  .catch(e => console.log(e));*/
     //console.log(this.alineacion);
     this._empleadoService.getEmpleados().subscribe(data => {
       this.isData = true;
@@ -95,6 +110,14 @@ export class HomePage implements OnInit {
     
     
   }
+
+  languageChange() {  // add this
+    this.translateService.use(this.language);  // add this
+  }  // add this
+
+  openSelect() {
+  this.selectRef.open()
+}
 
   public getImgJugador(posicion: string): string {
     

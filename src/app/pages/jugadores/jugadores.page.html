@@ -16,6 +16,7 @@
   <section>
     <ion-button color="light" (click)="sort('nombre')">{{ 'NOMBRE' | translate}}</ion-button>
     <ion-button color="light" (click)="sort('mazo')">{{ 'NIVEL' | translate}}</ion-button>
+    <ion-button color="light" (click)="sort('id')">{{ 'DORSAL' | translate}}</ion-button>
   </section>
   
   <ion-list>
@@ -25,7 +26,7 @@
       </ion-avatar>
 
       <ion-label (click)="jugadorSeleccionado(jugador.id)">
-        <h2>{{jugador.nombre | translate }}</h2>
+        <h2>{{ ('0' + jugador.id).slice(-2) }} {{jugador.nombre | translate }}</h2>
         <p>{{jugador.mazo}}</p>
       </ion-label>
 <ion-icon *ngIf="alineacion[posicion].id === jugador.id" slot="end" name="repeat-outline"

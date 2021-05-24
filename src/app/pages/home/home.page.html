@@ -6,6 +6,25 @@
       </ion-menu-button>
     </ion-buttons>
     <ion-title>TOS Calculator</ion-title>
+    
+      <ion-thumbnail slot="end" >
+        <ion-img src="assets/images/flags/{{language}}.png" (click)='openSelect()'></ion-img>
+        <ion-select [(ngModel)]='language' (ionChange)='languageChange()' [hidden]='true'
+           #mySelect>
+          <ion-select-option value='es'>{{ 'ESPANOL' | translate }}</ion-select-option>
+          <ion-select-option value='ita'>{{ 'ITALIANO' | translate }}
+          </ion-select-option>
+        </ion-select>
+      </ion-thumbnail>
+
+    <!--ion-img class="flag-icon"src="assets/images/flags/{{language}}.png" (ionClick)='languageChange()'></ion-img>
+      <ion-select [(ngModel)]='language' (ionChange)='languageChange()'
+        [placeholder]='"tab1.languageChangePlaceholder" | translate'>
+        <ion-select-option value='es'>Español</ion-select-option>
+        <ion-select-option value='ita'>Italiano</ion-select-option>
+      </ion-select>
+    -->
+
   </ion-toolbar>
 </ion-header>
 <ion-content *ngIf="isData">

@@ -75,8 +75,13 @@ export class JugadoresPage implements OnInit {
 
   sort(term: string) {
     
-    this.jugadores.sort((a, b) => (a[term] > b[term] ) ? 1 : (b[term]  > a[term] ) ? -1 : 0);
-    console.log(this.jugadores);
+    if (term == 'id')
+    {
+      this.jugadores.sort((a, b) => ( ('00' + a[term]).slice(-2) > ('00' + b[term]).slice(-2) ) ? 1 : (('00' + b[term]).slice(-2)   > ('00' + a[term]).slice(-2) ) ? -1 : 0);
+    }
+    else
+      this.jugadores.sort((a, b) => (a[term] > b[term] ) ? 1 : (b[term]  > a[term] ) ? -1 : 0);
+    //console.log(this.jugadores);
   }
 
 }
