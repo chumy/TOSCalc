@@ -15,7 +15,7 @@
 
       <ion-label (click)="empleadoSeleccionado(empleado.id, posicion)">
         <h2>{{empleado.nombre}}</h2>
-        <p>{{empleado.mazo}}</p>
+        <p>{{empleado.mazo | translate}}</p>
       </ion-label>
       <ion-icon *ngIf="alineacion[posicion].id === empleado.id" slot="end" name="close-circle" style="color:red"
         (click)="removeEmpleado(posicion)"></ion-icon>

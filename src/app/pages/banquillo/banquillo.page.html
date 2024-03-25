@@ -18,7 +18,7 @@
   
       <ion-label >
         <h2>{{alineacion[posicion].nombre}}</h2>
-        <p>{{alineacion[posicion].mazo}}</p>
+        <p>{{alineacion[posicion].mazo | translate}}</p>
       </ion-label>
       <ion-icon  slot="end" name="close-circle" style="color:red"
         (click)="removeBanquillo(posicion)"></ion-icon>

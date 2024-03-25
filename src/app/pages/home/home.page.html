@@ -9,11 +9,10 @@
     
       <ion-thumbnail slot="end" >
         <ion-img src="assets/images/flags/{{language}}.png" (click)='openSelect()'></ion-img>
-        <ion-select [(ngModel)]='language' (ionChange)='languageChange()' [hidden]='true'
-           #mySelect>
+        <ion-select [(ngModel)]='language' (ionChange)='languageChange()' style="display: none;" #mySelect>
           <ion-select-option value='es'>{{ 'ESPANOL' | translate }}</ion-select-option>
-          <ion-select-option value='ita'>{{ 'ITALIANO' | translate }}
-          </ion-select-option>
+          <ion-select-option value='ita'>{{ 'ITALIANO' | translate }}</ion-select-option>
+          <ion-select-option value='en'>{{ 'INGLES' | translate }}</ion-select-option>
         </ion-select>
       </ion-thumbnail>
 
@@ -31,34 +30,38 @@
 
     <ion-grid class="resumen" >
       <ion-row class="fila" >
-        <ion-col size="2" >
+        <ion-col size="1" >
           
-          <ion-icon name="football" style="zoom:2.0;" color="warning"></ion-icon> 
+          <ion-icon name="football" style="zoom:2.0;color: black"></ion-icon> 
         </ion-col>
-        <ion-col size="2">
-           <p > <b >
-              {{alineacion.ATAQUE}}
-            </b></p>
-            
+        <ion-col size="3">
+ 
+           <p > 
+            <b>{{alineacion.ATAQUE}}</b> <b class="nivel"> ({{nivelAtaque}})</b>
+          </p>
+        
         </ion-col>
-        <ion-col size="2">
+        <ion-col size="1">
           <ion-icon name="shield" style="zoom:2.0;" color="primary"></ion-icon>
           </ion-col>
-          <ion-col size="2">
+          <ion-col size="3" style="text-align: center;">
+            
             <p> <b>
-            {{alineacion.DEFENSA}}
+            {{alineacion.DEFENSA}} ({{nivelDefensa}})
           </b></p>
+        
         </ion-col>
         <ion-col size="2">
        
-          <ion-icon name="cash-outline" style="zoom:2.0;" color="success"></ion-icon>
+          <ion-icon name="cash" style="zoom:2.0;" color="success"></ion-icon>
           </ion-col>
           <ion-col size="2">
+          
             <p> 
           <b>
             {{alineacion.GANANCIAS}}
           </b></p>
-         
+        
         </ion-col>
       </ion-row>
         
@@ -237,12 +240,12 @@
     <ion-col size="3" class="casilla">
 
       <img [src]="getImgPatrocinador('TV')" [routerLink]="['/patrocinadores','TV']" />
-      <p>{{alineacion['TV'].nombre}}</p>
+      <p *ngIf="showNombre">{{alineacion['TV'].nombre}}</p>
     </ion-col>
     <ion-col size="3" class="casilla">
 
       <img [src]="getImgPatrocinador('VALLA')" [routerLink]="['/patrocinadores','VALLA']" />
-      <p>{{alineacion['VALLA'].nombre}}</p>
+      <p  *ngIf="showNombre">{{alineacion['VALLA'].nombre}}</p>
 
     </ion-col>
 
@@ -252,15 +255,15 @@
   <ion-row>
     <ion-col size="4" class="casilla center">
       <img [src]="getImgEmpleado('CM')" [routerLink]="['/empleados','CM']" />
-      <p  *ngIf="nombre">{{alineacion['CM'].nombre}}</p>
+      <p  *ngIf="showNombre">{{alineacion['CM'].nombre}}</p>
     </ion-col>
     <ion-col size="4" class="casilla center">
       <img [src]="getImgEmpleado('AGENTE')" [routerLink]="['/empleados','AGENTE']" />
-      <p  *ngIf="nombre">{{alineacion['AGENTE'].nombre}}</p>
+      <p  *ngIf="showNombre">{{alineacion['AGENTE'].nombre}}</p>
     </ion-col>
     <ion-col size="4" class="casilla center">
       <img [src]="getImgEmpleado('OJEADOR')" [routerLink]="['/empleados','OJEADOR']" />
-      <p  *ngIf="nombre">{{alineacion['OJEADOR'].nombre}}</p>
+      <p  *ngIf="showNombre">{{alineacion['OJEADOR'].nombre}}</p>
     </ion-col>
 
   </ion-row>

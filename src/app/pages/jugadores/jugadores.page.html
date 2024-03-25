@@ -20,17 +20,17 @@
   </section>
   
   <ion-list>
-    <ion-item *ngFor="let jugador of jugadores">
+    <ion-item *ngFor="let jugador of jugadores" class="{{jugador.mazo}}">
       <ion-avatar slot="start" (click)="jugadorSeleccionado(jugador.id)">
         <img src="assets/images/jugadores/{{this.alineacion.mod}}/{{jugador.id}}.jpg" />
       </ion-avatar>
 
-      <ion-label (click)="jugadorSeleccionado(jugador.id)">
-        <h2>{{ ('0' + jugador.id).slice(-2) }} {{jugador.nombre | translate }}</h2>
-        <p>{{jugador.mazo}}</p>
+      <ion-label (click)="jugadorSeleccionado(jugador.id)" >
+        <h2>{{jugador.nombre | translate }} ({{ ('0' + jugador.id).slice(-2) }})</h2>
+        <p>{{jugador.mazo | translate}}</p>
       </ion-label>
-<ion-icon *ngIf="alineacion[posicion].id === jugador.id" slot="end" name="repeat-outline"
-  style="color:rgb(41, 41, 41)" (click)="sendBanquillo(jugador.id)"></ion-icon>
+<ion-icon *ngIf="alineacion[posicion].id === jugador.id" slot="end" name="refresh-circle" style="color:rgb(0, 132, 255)"
+   (click)="sendBanquillo(jugador.id)"></ion-icon>
 
       <ion-icon
         *ngIf="alineacion[posicion].id === jugador.id"

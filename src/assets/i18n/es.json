@@ -18,6 +18,7 @@
     "CM" : "Community Manager",
     "OJEADOR" : "Ojeador",
     "TV" : "Televisión",
+    "AGENTE" : "Secretario Técnico",
     "AFICION" : "Afición",
     "BENCH" : "Banquillo",
     "NIVEL" : "Nivel",
@@ -32,6 +33,13 @@
     "IDIOMA" : "Idioma",
     "ITALIANO" : "Italiano",
     "ESPANOL": "Español",
+    "INGLES": "Inglés",
     "ALINEACION" : "Alineación",
-    "MENU" : "Menu"
+    "MENU" : "Menu",
+    "MAZO1" : "Mazo 1",
+    "MAZO2" : "Mazo 2",
+    "MAZO3" : "Mazo 3",
+    "MAZO4" : "Mazo 4",
+    "INICIAL" : "Inicial",
+    "ALTSTR" : "ALL-STAR"
 }

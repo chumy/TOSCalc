@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Patrocinador {\n  constructor() {\n    this.nombre = \"\";\n    this.id = null;\n    this.mazo = \"\";\n    this.sueldo = 0;\n    this.VALLA = 0;\n    this.TV = 0;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

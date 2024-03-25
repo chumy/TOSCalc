@@ -32,7 +32,14 @@
     "IDIOMA" : "Idioma",
     "ITALIANO" : "Italiano",
     "ESPANOL": "Spagnolo",
-    "ALINEACION" : "Alineación",
-    "MENU" : "Menu"
+    "INGLES": "Inglese",
+    "ALINEACION" : "Allineamento",
+    "MENU" : "Menu",
+    "MAZO1" : "Mazzo 1",
+    "MAZO2" : "Mazzo 2",
+    "MAZO3" : "Mazzo 3",
+    "MAZO4" : "Mazzo 4",
+    "INICIAL" : "Iniziale",
+    "ALTSTR" : "ALL-STAR"
 
 }

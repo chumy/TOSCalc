@@ -15,7 +15,7 @@
 
       <ion-label (click)="entrenadorSeleccionado(entrenador.id)">
         <h2>{{entrenador.nombre}}</h2>
-        <p>{{entrenador.mazo}}</p>
+        <p>{{entrenador.mazo | translate}}</p>
       </ion-label>
       <ion-icon *ngIf="alineacion[posicion].id === entrenador.id" slot="end" name="repeat-outline" style="color:rgb(41, 41, 41)"
         (click)="sendBanquillo(entrenador.id)"></ion-icon>

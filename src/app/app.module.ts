@@ -3,8 +3,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
 
 import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
-import { SplashScreen } from "@ionic-native/splash-screen/ngx";
-import { StatusBar } from "@ionic-native/status-bar/ngx";
+import { SplashScreen } from  '@capacitor/splash-screen';
+//import { StatusBar } from "@ionic-native/status-bar/ngx";
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
@@ -26,7 +26,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 @NgModule({
   declarations: [AppComponent, ImgJugadorPipe, MenuComponent],
-  entryComponents: [],
+  //entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -41,8 +41,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     }),
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
+    //StatusBar,
+    //SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@
 
       <ion-label (click)="patrocinadorSeleccionado(p.id, posicion)">
         <h2>{{p.nombre}}</h2>
-        <p>{{p.mazo}}</p>
+        <p>{{p.mazo | translate}}</p>
       </ion-label>
       <ion-icon *ngIf="alineacion[posicion].id === p.id" slot="end" name="close-circle" style="color:red"
         (click)="removePatrocinador(posicion)"></ion-icon>

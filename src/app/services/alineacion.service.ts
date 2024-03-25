@@ -5,7 +5,7 @@ import { Entrenador } from "../models/entrenador";
 import { EmpleadosService } from "./empleados.service";
 import { Empleado } from "../models/empleado";
 import { Patrocinador } from "../models/patrocinador";
-import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
+//import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 
 @Injectable({
   providedIn: "root"

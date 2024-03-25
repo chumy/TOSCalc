@@ -39,6 +39,9 @@ export class HomePage implements OnInit {
   ficheros: string[];
   showNombre: boolean;
   language: string = this.translateService.currentLang;
+  showSelect: boolean = false;
+  nivelAtaque : number;
+  nivelDefensa : number;
 
 
   @ViewChild('mySelect') selectRef: IonSelect
@@ -89,11 +92,15 @@ export class HomePage implements OnInit {
   ionViewWillEnter() {
     this.alineacion = this._alineacionService.alineacion;
     this.jugadores = this._jugadorService.jugadores;
+    this.nivelAtaque= Math.floor(this.alineacion.ATAQUE/5);
+    this.nivelDefensa= Math.floor(this.alineacion.DEFENSA/5);
     }
 
   async ngOnInit() {
     this.alineacion = this._alineacionService.alineacion;
     this.jugadores = this._jugadorService.jugadores;
+    this.nivelAtaque= Math.floor(this.alineacion.ATAQUE/5);
+    this.nivelDefensa= Math.floor(this.alineacion.DEFENSA/5);
     this.showNombre = false;
     /*this.globalization.getPreferredLanguage()
   .then(res => console.log(res))
@@ -116,7 +123,8 @@ export class HomePage implements OnInit {
   }  // add this
 
   openSelect() {
-  this.selectRef.open()
+    this.selectRef.open()
+  
 }
 
   public getImgJugador(posicion: string): string {
@@ -124,7 +132,7 @@ export class HomePage implements OnInit {
     //console.log("assets/images/jugadores/" + this.alineacion.mod + "/" + this.alineacion[posicion].id + ".jpg");
     return this.alineacion[posicion].id
       ? "assets/images/jugadores/" + this.alineacion.mod + "/" + this.alineacion[posicion].id + ".jpg"
-      : "assets/images/jugador_vacio.jpg";
+      : "assets/images/jugador_vacio_bn.jpg";
   }
 
   public getImgEntrenador(posicion: string): string {

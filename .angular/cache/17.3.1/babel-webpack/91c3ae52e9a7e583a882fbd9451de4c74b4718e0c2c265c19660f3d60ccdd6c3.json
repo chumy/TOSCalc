@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Empleado {\n  constructor() {\n    this.nombre = \"\";\n    this.id = null;\n    this.mazo = \"\";\n    this.sueldo = 0;\n    this.OJEADOR = 0;\n    this.AGENTE = 0;\n    this.CM = 0;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

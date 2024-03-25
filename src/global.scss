@@ -24,3 +24,27 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@font-face {
+    font-family: 'Tertre';
+    font-style: normal;
+    font-weight: bold;
+    src: url('assets/fonts/tertre-xbol.otf');
+  }
+
+  @font-face {
+    font-family: 'Star';
+    font-style: normal;
+    font-weight: normal;
+    src: url('assets/fonts/STARBATS.ttf');
+  }
+
+  html *
+{
+   font-family: 'Tertre' !important;
+}
+
+.MAZO1 {
+    background-color: antiquewhite;
+}

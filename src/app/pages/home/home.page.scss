@@ -1,3 +1,4 @@
+
 #container {
   text-align: center;
 
@@ -59,10 +60,12 @@
 }
 
 .campoImpar {
-  background: #7aad47;
+  //background: #7aad47;
+  background-image: url('../../../assets/images/estadio/grass_dark.png');
 }
 .campo {
-  background: #669933;
+  //background: #669933;
+  background-image: url('../../../assets/images/estadio/grass_light.png');
 }
 
 .color_entrenador {
@@ -83,11 +86,15 @@ ion-card {
 
 ion-grid {
   padding: 0 0 0 0;
+
 }
 
 ion-col {
   padding-top: 0 0 0 0;
+  text-align: center;
 }
+
+
 
 .fila {
   display: flex;
@@ -128,9 +135,13 @@ ion-col {
 }
 
 .resumen {
-  background-color: #fcdea6;
+  background-color: #fcf9ce;
 }
+.nivel{
 
+  font-weight: bold;
+  font-size: large;
+}
 .clubBorde {
   background-color: #7259ff;
 }
@@ -141,18 +152,32 @@ ion-col {
 
 ion-item {
   padding: 0 0 0 0;
+  background-color: transparent;
+}
+
+ion-title{
+  --ion-font-family:  'Tertre'!important;
+  font-family:  'Tertre' !important;
+  font-weight: bold;
+  font-size: large;
 }
 
 .aficion ion-range {
   height: 10vh;
 }
 
+
 .resumen p {
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  transform: translate(-50%, -50%);
+  --ion-font-family:  'Tertre'!important;
+  font-family:  'Tertre' !important;
+  font-weight: bold;
+  font-size: large;
+  
+  //position: absolute;
+  //top: 50%;
+  //left: 20%;
+ // transform: translate(-50%, -50%);
 }
 
 .center img {
