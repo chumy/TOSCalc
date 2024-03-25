@@ -89,18 +89,24 @@ export class HomePage implements OnInit {
     
   }
 
-  ionViewWillEnter() {
+  dataInit(){
     this.alineacion = this._alineacionService.alineacion;
     this.jugadores = this._jugadorService.jugadores;
     this.nivelAtaque= Math.floor(this.alineacion.ATAQUE/5);
     this.nivelDefensa= Math.floor(this.alineacion.DEFENSA/5);
+    this.nivelAtaque=(this.nivelAtaque < -2)?  -2 : this.nivelAtaque;
+    this.nivelDefensa=(this.nivelDefensa < -2)?  -2 : this.nivelDefensa;
+    this.nivelAtaque=(this.nivelAtaque > 15 )?  15 : this.nivelAtaque;
+    this.nivelDefensa=(this.nivelDefensa > 15)?  15 : this.nivelDefensa;
+
+  }
+
+  ionViewWillEnter() {
+    this.dataInit();
     }
 
   async ngOnInit() {
-    this.alineacion = this._alineacionService.alineacion;
-    this.jugadores = this._jugadorService.jugadores;
-    this.nivelAtaque= Math.floor(this.alineacion.ATAQUE/5);
-    this.nivelDefensa= Math.floor(this.alineacion.DEFENSA/5);
+    this.dataInit();
     this.showNombre = false;
     /*this.globalization.getPreferredLanguage()
   .then(res => console.log(res))

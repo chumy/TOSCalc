@@ -105,6 +105,8 @@ export class AlineacionService {
         this.alineacion.GANANCIAS += parseInt(this.alineacion[key].sueldo);
       }
     });
+    this.alineacion.GANANCIAS=(this.alineacion.GANANCIAS > 10)? 10 : this.alineacion.GANANCIAS;
+    this.alineacion.GANANCIAS=(this.alineacion.GANANCIAS < -5 )? -5 : this.alineacion.GANANCIAS;
   }
 
   actualizarDefensa() {

@@ -2,7 +2,7 @@ id,nombre,mazo,sueldo,tipo,VALLA,TV
 501,Dias de Juego 1,MAZO1,1,TV,0,1
 502,Analisis Paralisis,MAZO1,1,TV,0,1
 401,Juegos de la Mesa Redonda,MAZO1,1,VALLA,1,0
-402,MaxGamer,MAZO1,1,VALLA,1,0
+402,MaxGames,MAZO1,1,VALLA,1,0
 503,MagTV 2,MAZO2,2,TV,0,1
 504,El Tablero,MAZO2,2,TV,0,1
 403,MCC,MAZO2,2,VALLA,1,0
