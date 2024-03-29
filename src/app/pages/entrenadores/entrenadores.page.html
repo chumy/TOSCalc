@@ -8,22 +8,23 @@
 </ion-header>
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let entrenador of entrenadores">
-      <ion-avatar slot="start" (click)="entrenadorSeleccionado(entrenador.id)">
+    <ion-item *ngFor="let entrenador of entrenadores" class="{{entrenador.mazo}}">
+      <ion-avatar slot="start" (click)="entrenadorSeleccionado(entrenador.id)" >
         <img src="assets/images/entrenadores/{{entrenador.id}}.jpg" />
       </ion-avatar>
 
       <ion-label (click)="entrenadorSeleccionado(entrenador.id)">
         <h2>{{entrenador.nombre}}</h2>
-        <p>{{entrenador.mazo | translate}}</p>
+        <p> <ion-badge class="{{entrenador.mazo}}">{{entrenador.mazo | translate}}</ion-badge></p>
       </ion-label>
-      <ion-icon *ngIf="alineacion[posicion].id === entrenador.id" slot="end" name="repeat-outline" style="color:rgb(41, 41, 41)"
-        (click)="sendBanquillo(entrenador.id)"></ion-icon>
+      <ion-icon *ngIf="alineacion[posicion].id === entrenador.id" slot="end" name="refresh-circle" style="color:rgb(0, 132, 255)" 
+      size="large" (click)="sendBanquillo(entrenador.id)"></ion-icon>
       <ion-icon
         *ngIf="alineacion[posicion].id === entrenador.id"
         slot="end"
         name="close-circle"
         style="color:red"
+        size="large"
         (click)="removeJugador(entrenador.id)"
       ></ion-icon>
     </ion-item>

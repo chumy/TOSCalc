@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border">
+<ion-header >
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -15,10 +15,10 @@
 
       <ion-label (click)="empleadoSeleccionado(empleado.id, posicion)">
         <h2>{{empleado.nombre}}</h2>
-        <p>{{empleado.mazo | translate}}</p>
+        <p><ion-badge class="{{empleado.mazo}}">{{empleado.mazo | translate}}</ion-badge></p>
       </ion-label>
       <ion-icon *ngIf="alineacion[posicion].id === empleado.id" slot="end" name="close-circle" style="color:red"
-        (click)="removeEmpleado(posicion)"></ion-icon>
+        (click)="removeEmpleado(posicion)" size="large"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -192,3 +192,19 @@ ion-title{
   width: 2 wh;
   height: 2 vh;
 }
+
+
+ion-range {
+  --bar-background: #a2d2ff;
+  --bar-background-active: #bde0fe;
+  --bar-height: 8px;
+  --bar-border-radius: 8px;
+  --knob-background: #ffc8dd;
+  --knob-size: 30px;
+  --pin-background: #ffafcc;
+  --pin-color: #fff;
+}
+
+.aficion{
+  font-size: larger;
+}

@@ -46,5 +46,38 @@
 }
 
 .MAZO1 {
-    background-color: antiquewhite;
+    background-color: rgb(172, 189, 22);
+}
+
+.MAZO2 {
+  background-color: rgb(177, 28, 190);
+}
+
+.MAZO3 {
+  background-color: rgb(44, 193, 204);
+}
+
+.MAZO4 {
+  background-color: rgb(18, 151, 0);
+}
+
+.ALTSTR {
+  background-color: rgb(216, 128, 13);
+}
+
+ion-avatar {
+  --border-radius: 4px;
+}
+
+h2 {
+  //font-size: large !important;
+  font-size: 2.2dvh !important;
+}
+
+ion-badge {
+  font-size: medium;
+}
+
+ion-title {
+  font-size: 2.5dvh !important;
 }

@@ -41,5 +41,6 @@
     "MAZO3" : "Deck 3",
     "MAZO4" : "Deck 4",
     "INICIAL" : "Initial",
-    "ALTSTR" : "ALL-STAR"
+    "ALTSTR" : "ALL-STAR",
+    "SELECCION_IDIOMA" : "Choose language"
 }

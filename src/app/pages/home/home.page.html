@@ -8,8 +8,8 @@
     <ion-title>TOS Calculator</ion-title>
     
       <ion-thumbnail slot="end" >
-        <ion-img src="assets/images/flags/{{language}}.png" (click)='openSelect()'></ion-img>
-        <ion-select [(ngModel)]='language' (ionChange)='languageChange()' style="display: none;" #mySelect>
+        <ion-img src="assets/images/flags/{{language}}.png" (click)='openSelect()' ></ion-img>
+        <ion-select [(ngModel)]='language' (ionChange)='languageChange()' style="display: none;" #mySelect label="{{ 'SELECCION_IDIOMA' | translate}}">
           <ion-select-option value='es'>{{ 'ESPANOL' | translate }}</ion-select-option>
           <ion-select-option value='ita'>{{ 'ITALIANO' | translate }}</ion-select-option>
           <ion-select-option value='en'>{{ 'INGLES' | translate }}</ion-select-option>
@@ -273,10 +273,10 @@
       <ion-col>
         <ion-item>
   
-          <ion-label>{{ 'AFICION' | translate }}</ion-label>
-          <ion-range pin min="10" max="20" step="1" snaps="true" color="warning" [(ngModel)]="alineacion['AFICION']"
+          <ion-label class="aficion">{{ 'AFICION' | translate }}</ion-label>
+          <ion-range  min="10" max="20" step="1" snaps="true" color="warning" [(ngModel)]="alineacion['AFICION']"
             (ionChange)="updateAficion()"></ion-range>
-          <ion-badge slot="end" color="warning">{{alineacion['AFICION']}}</ion-badge>
+          <ion-badge class="aficion" slot="end" color="warning" >{{alineacion['AFICION']}}</ion-badge>
         </ion-item>
       </ion-col>
     </ion-row>

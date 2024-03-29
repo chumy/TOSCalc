@@ -18,10 +18,10 @@
   
       <ion-label >
         <h2>{{alineacion[posicion].nombre}}</h2>
-        <p>{{alineacion[posicion].mazo | translate}}</p>
+        <p><ion-badge class="{{alineacion[posicion].mazo}}">{{alineacion[posicion].mazo | translate}}</ion-badge></p>
       </ion-label>
       <ion-icon  slot="end" name="close-circle" style="color:red"
-        (click)="removeBanquillo(posicion)"></ion-icon>
+        (click)="removeBanquillo(posicion)" size="large"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>
